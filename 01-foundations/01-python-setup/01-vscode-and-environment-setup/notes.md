@@ -2,7 +2,7 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 This lecture focuses on setting up a clean and scalable Python development environment using Visual Studio Code and virtual environments.
 
@@ -10,7 +10,7 @@ This setup forms the foundation for all future Machine Learning and AI projects.
 
 ---
 
-## 🟢 Why Visual Studio Code?
+## Why Visual Studio Code?
 
 Visual Studio Code (VS Code) is used as the primary IDE because:
 
@@ -19,13 +19,13 @@ Visual Studio Code (VS Code) is used as the primary IDE because:
 - Seamless virtual environment integration
 - Rich ecosystem of extensions
 
-👉 One tool for coding, experimentation, and documentation.
+One tool for coding, experimentation, and documentation.
 
 ---
 
-## 🔵 Virtual Environment (VERY IMPORTANT)
+## Virtual Environment (VERY IMPORTANT)
 
-### 📌 What is a Virtual Environment?
+### What is a Virtual Environment?
 
 A virtual environment is an isolated workspace where:
 
@@ -34,7 +34,7 @@ A virtual environment is an isolated workspace where:
 
 ---
 
-### 🎯 Why Use Virtual Environments?
+### Why Use Virtual Environments?
 
 - Avoid dependency conflicts between projects
 - Manage different package versions easily
@@ -42,49 +42,49 @@ A virtual environment is an isolated workspace where:
 
 #### Example:
 
-- Project A → TensorFlow 2.10  
-- Project B → TensorFlow 2.15  
+- Project A → TensorFlow 2.10
+- Project B → TensorFlow 2.15
 
-➡️ Both can coexist without conflict using separate environments.
+Both can coexist without conflict using separate environments.
 
 ---
 
-## ⚙️ Creating Environment (Conda)
+## Creating Environment (Conda)
 
 ```bash
 conda create -p venv python==3.12
 ```
 
-### 🔍 Breakdown:
+### Breakdown:
 
-- `conda create` → Creates a new environment  
-- `-p venv` → Specifies environment path/name  
-- `python==3.12` → Installs specific Python version  
+- `conda create` → Creates a new environment
+- `-p venv` → Specifies environment path/name
+- `python==3.12` → Installs specific Python version
 
 ---
 
-## ▶️ Activate Environment
+## Activate Environment
 
 ```bash
 conda activate venv
 ```
 
-👉 All commands now run inside this isolated environment.
+All commands now run inside this isolated environment.
 
 ---
 
-## 📦 What Happens Internally?
+## What Happens Internally?
 
-- Python interpreter is installed  
-- Required system libraries are configured  
+- Python interpreter is installed
+- Required system libraries are configured
 - Environment folder structure is created:
-  - DLLs  
-  - Libraries  
-  - Scripts  
+  - DLLs
+  - Libraries
+  - Scripts
 
 ---
 
-## 💻 Running a Python File
+## Running a Python File
 
 ### Example: `app.py`
 
@@ -106,7 +106,7 @@ python app.py
 
 ---
 
-## 📁 Project Structure Approach
+## Project Structure Approach
 
 ```
 project/
@@ -121,17 +121,17 @@ project/
 
 ---
 
-## 🟣 Jupyter Notebook in VS Code
+## Jupyter Notebook in VS Code
 
-### 📌 Features
+### Features
 
-- Code cells  
-- Markdown cells  
-- Interactive execution  
+- Code cells
+- Markdown cells
+- Interactive execution
 
 ---
 
-### ▶️ Run Cells
+### Run Cells
 
 ```
 Shift + Enter
@@ -139,13 +139,13 @@ Shift + Enter
 
 ---
 
-### 📌 Markdown Usage
+### Markdown Usage
 
 Used for:
 
-- Titles  
-- Notes  
-- Documentation  
+- Titles
+- Notes
+- Documentation
 
 #### Example:
 
@@ -155,16 +155,16 @@ Used for:
 
 ---
 
-## ⚠️ Important Package: ipykernel
+## Important Package: ipykernel
 
-### ❗ Why is it needed?
+### Why is it needed?
 
-- Enables Jupyter Notebook execution  
-- Connects Python environment to VS Code notebooks  
+- Enables Jupyter Notebook execution
+- Connects Python environment to VS Code notebooks
 
 ---
 
-### 📦 Install Command
+### Install Command
 
 ```bash
 pip install ipykernel
@@ -172,9 +172,9 @@ pip install ipykernel
 
 ---
 
-## 📄 requirements.txt
+## requirements.txt
 
-### 📌 Purpose
+### Purpose
 
 Stores all project dependencies
 
@@ -188,7 +188,7 @@ pandas
 
 ---
 
-### 🎯 Benefit
+### Benefit
 
 Install all dependencies at once:
 
@@ -198,31 +198,31 @@ pip install -r requirements.txt
 
 ---
 
-## 🔁 Execution Difference
+## Execution Difference
 
-| File Type | Execution Method |
-|----------|----------------|
+| File Type  | Execution Method   |
+| ---------- | ------------------ |
 | `.py`    | `python file.py` |
-| `.ipynb` | `Shift + Enter` |
+| `.ipynb` | `Shift + Enter`  |
 
 ---
 
-## ⚡ Quick Revision
+## Quick Revision
 
-- Use VS Code as primary IDE  
-- Always create a virtual environment  
-- Use `conda create` and `conda activate`  
-- Install `ipykernel` for notebooks  
-- Use `requirements.txt` for dependency management  
-- `.py` → Terminal execution  
-- `.ipynb` → Interactive execution  
+- Use VS Code as primary IDE
+- Always create a virtual environment
+- Use `conda create` and `conda activate`
+- Install `ipykernel` for notebooks
+- Use `requirements.txt` for dependency management
+- `.py` → Terminal execution
+- `.ipynb` → Interactive execution
 
 ---
 
-## 🧭 Practical Task
+## Practical Task
 
-- Create a virtual environment (Python 3.12)  
-- Activate the environment  
+- Create a virtual environment (Python 3.12)
+- Activate the environment
 - Create:
   - `app.py`
   - `test.ipynb`
@@ -235,25 +235,21 @@ pip install ipykernel
 
 ---
 
-## 🔥 Real-World Insight
+## Real-World Insight
 
 A clean environment setup ensures:
 
-- Reproducibility of ML experiments  
-- Smooth team collaboration  
-- No dependency conflicts  
+- Reproducibility of ML experiments
+- Smooth team collaboration
+- No dependency conflicts
 
-👉 This is the backbone of MLOps and production-grade systems
+This is the backbone of MLOps and production-grade systems
 
 ---
 
-## ⚔️ Final Thought
+## Final Thought
 
-This is not just setup.
+This is the foundation of every AI system
 
-This is:
-
-🧱 The foundation of every AI system you will ever build  
-
-If your base is clean → everything scales  
-If your base is messy → everything breaks  
+If base is clean → everything scales
+If base is messy → everything breaks
