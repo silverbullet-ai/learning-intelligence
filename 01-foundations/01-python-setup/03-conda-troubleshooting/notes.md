@@ -40,52 +40,65 @@ Anaconda Prompt instead of CMD
 
 ### Step 1: Locate Anaconda Path
 
-Typical location:
+Check if Anaconda is installed at:
 
 ```
-C:\Users\yourname\anaconda3
+C:\Users\Aahish\anaconda3
 ```
+
+> Replace `Aahish` with your actual system username.
 
 ---
 
 ### Step 2: Open Environment Variables
 
-Search:
-
-```
-Edit System Environment Variables
-```
-
-→ Click **Environment Variables**
+1. Press **Windows key**
+2. Search:
+   ```
+   Edit the system environment variables
+   ```
+3. Click on it  
+4. In the window that opens, click:
+   **Environment Variables**
 
 ---
 
-### Step 3: Edit PATH
+### Step 3: Edit PATH Variable
 
-Add:
+1. Under **User Variables** (top section):
+   - Select **Path**
+   - Click **Edit**
+
+2. Click **New** and add these paths one by one:
 
 ```
-C:\Users\yourname\anaconda3
-C:\Users\yourname\anaconda3\Scripts
-C:\Users\yourname\anaconda3\Library\bin
+C:\Users\Aahish\anaconda3
+C:\Users\Aahish\anaconda3\Scripts
+C:\Users\Aahish\anaconda3\Library\bin
 ```
+
+> ⚠️ Important:
+> - Do NOT delete existing entries  
+> - Just add the above paths
 
 ---
 
 ### Step 4: Restart Terminal
 
-- Close CMD / PowerShell  
-- Open again  
+- Close CMD / PowerShell / VS Code terminal  
+- Open it again  
 
 ---
 
 ### Step 5: Verify
 
+Run:
+
 ```bash
 conda --version
 ```
 
-👉 If version appears → ✅ Fixed
+👉 If it shows a version → ✅ **Issue Fixed**
 
 ---
 
