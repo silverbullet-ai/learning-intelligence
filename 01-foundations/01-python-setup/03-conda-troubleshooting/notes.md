@@ -134,6 +134,6 @@ Debugging setup = first step toward becoming an engineer
 
 ---
 
-## Link
+## Resources
 
-https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command 
+[Fix: "conda is not recognized as internal or external command"](https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command)
