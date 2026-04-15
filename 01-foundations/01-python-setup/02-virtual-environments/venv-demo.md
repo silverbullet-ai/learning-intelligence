@@ -1,11 +1,11 @@
 venv-demo
 
-```markdown
-# venv
+```bash
+#venv
 python -m venv myenv
 myenv\Scripts\activate
 
-# virtualenv
+#virtualenv
 pip install virtualenv
 virtualenv myenv
 
