@@ -13,7 +13,8 @@ myenv\Scripts\activate
 
 ```bash
 pip install virtualenv
-virtualenv myenv
+virtualenv -p python3 venv1
+venv1\Scripts\activate
 ```
 
 ## conda
