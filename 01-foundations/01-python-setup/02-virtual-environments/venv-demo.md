@@ -1,15 +1,24 @@
-venv-demo
+# venv-demo
+
+
+## venv
 
 ```bash
-#venv
 python -m venv myenv
 myenv\Scripts\activate
+```
 
-#virtualenv
+
+## virtualenv
+
+```bash
 pip install virtualenv
 virtualenv myenv
+```
 
-# conda
+## conda
+
+```bash
 conda create -p envs/python-core python=3.12
 conda activate envs/python-core
 ```
