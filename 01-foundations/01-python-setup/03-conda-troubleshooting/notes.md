@@ -28,7 +28,7 @@ During Anaconda installation:
 
 Use:
 
-👉 Anaconda Prompt instead of CMD  
+Anaconda Prompt instead of CMD  
 
 ### Why it works:
 
@@ -43,7 +43,7 @@ Use:
 Typical location:
 
 ```
-C:\Users\Aahish\anaconda3
+C:\Users\yourname\anaconda3
 ```
 
 ---
@@ -65,9 +65,9 @@ Edit System Environment Variables
 Add:
 
 ```
-C:\Users\Aahish\anaconda3
-C:\Users\Aahish\anaconda3\Scripts
-C:\Users\Aahish\anaconda3\Library\bin
+C:\Users\yourname\anaconda3
+C:\Users\yourname\anaconda3\Scripts
+C:\Users\yourname\anaconda3\Library\bin
 ```
 
 ---
