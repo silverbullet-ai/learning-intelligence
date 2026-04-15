@@ -65,13 +65,13 @@ pip install virtualenv
 ### Create Environment
 
 ```bash
-virtualenv -p python3 myenv
+virtualenv -p python3 venv1
 ```
 
 ### Activate
 
 ```bash
-myenv\Scripts\activate
+venv1\Scripts\activate
 ```
 
 ### Notes
