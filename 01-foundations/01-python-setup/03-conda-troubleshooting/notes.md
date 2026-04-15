@@ -130,4 +130,10 @@ Knowing how to debug setup issues:
 - Makes you self-reliant  
 - Prepares you for real-world systems  
 
-Debugging setup = first step toward becoming an engineer  
+Debugging setup = first step toward becoming an engineer 
+
+---
+
+## Link
+
+https://stackoverflow.com/questions/44515769/conda-is-not-recognized-as-internal-or-external-command 
