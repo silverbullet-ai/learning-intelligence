@@ -85,7 +85,7 @@ C:\Users\yourname\anaconda3\Library\bin
 conda --version
 ```
 
-👉 If version appears → ✅ Fixed  
+👉 If version appears → ✅ Fixed
 
 ---
 
