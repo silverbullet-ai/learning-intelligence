@@ -117,7 +117,7 @@ Easily done using Conda.
 
 ---
 
-## ⚖️ Comparison
+## Comparison
 
 | Method       | Python Version Control | Ease   | Recommendation |
 |--------------|----------------------|--------|----------------|
