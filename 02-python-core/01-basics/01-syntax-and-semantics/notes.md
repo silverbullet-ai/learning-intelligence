@@ -156,6 +156,8 @@ if age > 20:
 print(age)
 ```
 
+👉 Error:
+
 ```
 IndentationError: expected an indented block after 'if' statement on line 1
 ```
