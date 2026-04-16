@@ -115,7 +115,7 @@ x = 5; y = 10; z = x + y
 
 ## Semantics in Python
 
-### Variable Assignment
+### 1. Variable Assignment
 
 ```python
 age = 23
@@ -124,7 +124,7 @@ name = "Aahish"
 
 ---
 
-### Type Checking
+### 2. Type Checking
 
 ```python
 type(age)   # int
@@ -133,7 +133,7 @@ type(name)  # str
 
 ---
 
-### Dynamic Typing
+### 3. Dynamic Typing(Type Inference)
 
 ```python
 var = 10
@@ -154,6 +154,10 @@ print(type(var))   # str
 ```python
 if age > 20:
 print(age)
+```
+
+```
+IndentationError: expected an indented block after 'if' statement on line 1
 ```
 
 ---
