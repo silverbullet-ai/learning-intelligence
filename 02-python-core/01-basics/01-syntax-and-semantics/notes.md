@@ -6,8 +6,8 @@
 
 This lecture introduces two fundamental concepts:
 
-- **Syntax** → How code is written  
-- **Semantics** → What the code means / does  
+- **Syntax** → How code is written
+- **Semantics** → What the code means / does
 
 👉 Both are essential for writing correct and meaningful programs.
 
@@ -53,9 +53,9 @@ multi-line comment
 
 ### Purpose
 
-- Explain code  
-- Improve readability  
-- Add documentation  
+- Explain code
+- Improve readability
+- Add documentation
 
 ---
 
@@ -124,7 +124,7 @@ name = "Aahish"
 
 ---
 
-### - Type Checking
+### Type Checking
 
 ```python
 type(age)   # int
@@ -133,7 +133,7 @@ type(name)  # str
 
 ---
 
-### - Dynamic Typing
+### Dynamic Typing
 
 ```python
 var = 10
@@ -198,11 +198,11 @@ Outside block
 
 ## Quick Revision
 
-- Syntax → structure of code  
-- Semantics → meaning of code  
-- Python is case-sensitive  
-- Indentation defines code blocks  
-- Supports comments, line continuation, dynamic typing  
+- Syntax → structure of code
+- Semantics → meaning of code
+- Python is case-sensitive
+- Indentation defines code blocks
+- Supports comments, line continuation, dynamic typing
 
 ---
 
@@ -212,8 +212,8 @@ Syntax errors are easy to fix.
 
 Semantic errors are dangerous because:
 
-- Code runs  
-- But produces wrong results  
+- Code runs
+- But produces wrong results
 
 👉 This is where real debugging begins.
 
@@ -225,6 +225,6 @@ This is not basic.
 
 This is:
 
-The grammar of Python  
+The grammar of Python
 
 Strong grammar → clean code → faster debugging → better systems
