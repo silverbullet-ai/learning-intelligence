@@ -1,16 +1,16 @@
 # Case sensitivity demo
 name = "Aahish"
-Name = "AI"
+Name = "Aayan"
 
 print("name:", name)
 print("Name:", Name)
 
 
 # Indentation demo
-age = 32
+age = 23
 
-if age > 30:
-    print("Age is greater than 30")
+if age > 20:
+    print("Age is greater than 20")
 
 
 # Dynamic typing
