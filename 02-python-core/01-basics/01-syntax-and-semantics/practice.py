@@ -19,3 +19,8 @@ print(type(var))
 
 var = "Aahish"
 print(type(var))
+
+# Line Continuation
+total = 10 + 20 + 30 + \
+        40 + 50
+print("Total:", total)
