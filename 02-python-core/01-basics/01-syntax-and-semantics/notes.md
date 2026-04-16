@@ -83,15 +83,6 @@ if age > 20:
     print(age)
 ```
 
-Incorrect:
-
-```python
-if age > 20:
-print(age)
-```
-
-👉 Causes: **IndentationError**
-
 ---
 
 ### 3. Line Continuation
