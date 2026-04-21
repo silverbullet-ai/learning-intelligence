@@ -172,3 +172,12 @@ type(age)  # always str
 ```python
 age = int(input("Enter your age: "))
 ```
+---
+
+### Quick Revision
+- Variables store data
+- No type declaration needed
+- Python is dynamically typed
+- Use `type()` to check type
+- Use casting (`int()`, `str()`, etc.)
+- `input()` always returns string
