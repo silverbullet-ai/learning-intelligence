@@ -137,6 +137,6 @@ import this
 
 Python started as a simple idea:
 
-Make programming human-friendly  
+	Make programming human-friendly  
 
 Today, it is one of the most powerful languages in the world.
