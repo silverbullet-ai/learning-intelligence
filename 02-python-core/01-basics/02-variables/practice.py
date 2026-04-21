@@ -1,6 +1,6 @@
 # Variable creation
 name = "Aahish"
-age = 21
+age = 23
 
 print("My name is", name)
 print("I am", age, "years old")
