@@ -6,9 +6,9 @@
 
 Data types define:
 
-- What kind of data a variable holds  
-- What operations can be performed  
-- How memory is allocated  
+- What kind of data a variable holds
+- What operations can be performed
+- How memory is allocated
 
 👉 They tell Python how to store and use data.
 
@@ -16,9 +16,9 @@ Data types define:
 
 ## Importance of Data Types
 
-- Ensure efficient memory usage  
-- Enable correct operations  
-- Help prevent errors and bugs  
+- Ensure efficient memory usage
+- Enable correct operations
+- Help prevent errors and bugs
 
 ---
 
@@ -27,7 +27,7 @@ Data types define:
 ### Integer (`int`)
 
 ```python
-age = 35
+age = 23
 print(type(age))  # int
 ```
 
@@ -66,8 +66,8 @@ print(type(is_student))  # bool
 
 👉 Only two values:
 
-- True  
-- False  
+- True
+- False
 
 ---
 
@@ -147,12 +147,12 @@ x = "Hello"  # str
 
 ### Wrong Operations
 
-- Mixing incompatible types  
-- Not converting input properly  
+- Mixing incompatible types
+- Not converting input properly
 
 ---
 
-##  Built-in Methods (Intro)
+## Built-in Methods (Intro)
 
 ```python
 text = "hello"
@@ -161,9 +161,9 @@ print(text.upper())  # HELLO
 
 👉 Strings have many methods:
 
-- .upper()  
-- .lower()  
-- .count()  
+- .upper()
+- .lower()
+- .count()
 
 (More later)
 
@@ -171,8 +171,8 @@ print(text.upper())  # HELLO
 
 ## Quick Revision
 
-- Data types define kind of data  
-- Basic types: int, float, str, bool  
-- Use type() to check  
-- Use casting (int(), str())  
-- Python is dynamically typed  
+- Data types define kind of data
+- Basic types: int, float, str, bool
+- Use type() to check
+- Use casting (int(), str())
+- Python is dynamically typed
