@@ -21,9 +21,6 @@ age = 21
 
 print(name + str(age))  # correct
 
-# Uncomment to see error
-# print(name + age)
-
 # String methods
 text = "hello"
 print(text.upper())
