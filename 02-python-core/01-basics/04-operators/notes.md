@@ -2,7 +2,7 @@
 
 ---
 
-## 🧠 Overview
+## Overview
 
 Operators are symbols used to perform operations on variables and values.
 
@@ -14,7 +14,7 @@ Types covered:
 
 ---
 
-## 🔵 Arithmetic Operators
+## Arithmetic Operators
 
 Used for mathematical operations.
 
@@ -23,50 +23,50 @@ a = 10
 b = 5
 ```
 
-### ➕ Addition
+### Addition
 ```python
 a + b  # 15
 ```
 
-### ➖ Subtraction
+### Subtraction
 ```python
 a - b  # 5
 ```
 
-### ✖️ Multiplication
+### Multiplication
 ```python
 a * b  # 50
 ```
 
-### ➗ Division
+### Division
 ```python
 a / b  # 2.0
 ```
 
 👉 Always returns float
 
-### ⬇️ Floor Division
+### Floor Division
 ```python
 a // b  # 2
 ```
 
 👉 Removes decimal part
 
-### 🔁 Modulus
+### Modulus
 ```python
 a % b  # 0
 ```
 
 👉 Remainder
 
-### 🔺 Exponentiation
+### Exponentiation
 ```python
 a ** b  # 100000
 ```
 
 ---
 
-## 🧠 Key Difference
+## Key Difference
 
 ```python
 21 / 5   # 4.2
@@ -75,7 +75,7 @@ a ** b  # 100000
 
 ---
 
-## 🟣 Comparison Operators
+## Comparison Operators
 
 Always return boolean values.
 
@@ -91,7 +91,7 @@ a >= b   # True
 a <= b   # True
 ```
 
-### ⚠️ Case Sensitivity
+### Case Sensitivity
 
 ```python
 "Aahish" == "aahish"  # False
@@ -99,23 +99,23 @@ a <= b   # True
 
 ---
 
-## 🟡 Logical Operators
+## Logical Operators
 
 Used with boolean values.
 
-### 🟢 AND
+### AND
 ```python
 True and True   # True
 True and False  # False
 ```
 
-### 🔵 OR
+### OR
 ```python
 True or False   # True
 False or False  # False
 ```
 
-### 🔴 NOT
+### NOT
 ```python
 not True   # False
 not False  # True
@@ -123,7 +123,7 @@ not False  # True
 
 ---
 
-## 🧩 Truth Table
+## Truth Table
 
 | A | B | A and B | A or B |
 |---|---|--------|--------|
@@ -134,24 +134,7 @@ not False  # True
 
 ---
 
-## 🧪 Mini Project – Calculator
-
-```python
-a = float(input("Enter first number: "))
-b = float(input("Enter second number: "))
-
-print("Add:", a + b)
-print("Sub:", a - b)
-print("Mul:", a * b)
-print("Div:", a / b)
-print("Floor:", a // b)
-print("Mod:", a % b)
-print("Power:", a ** b)
-```
-
----
-
-## ⚡ Quick Revision
+## Quick Revision
 
 - Arithmetic → math operations  
 - Comparison → boolean results  
@@ -160,29 +143,3 @@ print("Power:", a ** b)
 - // → integer result  
 - % → remainder  
 - ** → power  
-
----
-
-## 🔥 Real-World Insight
-
-Operators are the backbone of:
-
-- Algorithms  
-- Condition handling  
-- Mathematical computations  
-
-👉 In ML:
-
-- Loss functions  
-- Gradient calculations  
-- Decision boundaries  
-
-All rely heavily on operators.
-
----
-
-## ⚔️ Final Thought
-
-Operators transform:
-
-Data → Logic → Decisions
