@@ -87,7 +87,7 @@ list.append('item')
 
 ```python
 #Example
-fruits.append("orange")     #Adds an element at the end of the list.
+fruits.append("orange")     # Adds an element at the end of the list.
 ```
 
 ### insert()
@@ -100,7 +100,7 @@ list_name.insert(index, 'item')
 
 ```python
 #Example
-fruits.insert(1, "kiwi")    #Inserts an element at a specific index position.
+fruits.insert(1, "kiwi")    # Inserts an element at a specific index position.
 ```
 
 ### remove()
@@ -113,7 +113,7 @@ list_name.remove('item')
 
 ```python
 #Example
-fruits.remove("banana")     #Removes the first matching element from the list.
+fruits.remove("banana")     # Removes the first matching element from the list.
 ```
 
 ### pop()
@@ -126,7 +126,7 @@ list_name.pop()
 
 ```python
 #Example
-fruits.pop()    #Removes and returns the last element.
+fruits.pop()    # Removes and returns the last element.
 ```
 
 ### index()
@@ -139,7 +139,7 @@ list_name.index('item')
 
 ```python
 #Example
-fruits.index("apple")   #Returns the index position of a specified element.
+fruits.index("apple")   # Returns the index position of a specified element.
 ```
 
 ### count()
@@ -151,7 +151,7 @@ list_name.count('item')
 
 ```python
 #Example
-fruits.count("banana")      #Returns the number of times an element appears in the list.
+fruits.count("banana")      # Returns the number of times an element appears in the list.
 ```
 
 ### sort()
@@ -163,7 +163,7 @@ list_name.sort()
 
 ```python
 #Example
-fruits.sort()       #Sorts the list elements in ascending order.
+fruits.sort()       # Sorts the list elements in ascending order.
 ```
 
 ### reverse()
@@ -176,7 +176,7 @@ list_name.reverse()
 
 ```python
 #Example
-fruits.reverse()    #Reverses the order of elements in the list.
+fruits.reverse()    # Reverses the order of elements in the list.
 ```
 
 ### clear()
@@ -189,7 +189,7 @@ list_name.clear()
 
 ```python
 #Example
-fruits.clear()  #Removes all elements from the list.
+fruits.clear()  # Removes all elements from the list.
 ```
 
 ---
