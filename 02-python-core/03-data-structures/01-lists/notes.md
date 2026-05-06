@@ -80,90 +80,115 @@ fruits[1] = "watermelon"
 ### append()
 
 ```
+#Syntax
+
 list.append('item')
 ```
 
 ```python
+#Example
 fruits.append("orange")     #Adds an element at the end of the list.
 ```
 
 ### insert()
 
 ```
+#Syntax
+
 list_name.insert(index, 'item')
 ```
 
 ```python
+#Example
 fruits.insert(1, "kiwi")    #Inserts an element at a specific index position.
 ```
 
 ### remove()
 
 ```
+#Syntax
+
 list_name.remove('item')
 ```
 
 ```python
+#Example
 fruits.remove("banana")     #Removes the first matching element from the list.
 ```
 
 ### pop()
 
 ```
+#Syntax
+
 list_name.pop()
 ```
 
 ```python
+#Example
 fruits.pop()    #Removes and returns the last element.
 ```
 
 ### index()
 
 ```
+#Syntax
+
 list_name.index('item')
 ```
 
 ```python
+#Example
 fruits.index("apple")   #Returns the index position of a specified element.
 ```
 
 ### count()
 
 ```
+#Syntax
 list_name.count('item')
 ```
 
 ```python
+#Example
 fruits.count("banana")      #Returns the number of times an element appears in the list.
 ```
 
 ### sort()
 
 ```
+#Syntax
 list_name.sort()
 ```
 
 ```python
+#Example
 fruits.sort()       #Sorts the list elements in ascending order.
 ```
 
 ### reverse()
 
 ```
+#Syntax
+
 list_name.reverse()
 ```
 
 ```python
+#Example
 fruits.reverse()    #Reverses the order of elements in the list.
 ```
 
 ### clear()
 
 ```
+#Syntax
+
 list_name.clear()
 ```
 
 ```python
+#Example
 fruits.clear()  #Removes all elements from the list.
 ```
 
