@@ -365,7 +365,7 @@ You should clearly understand:
 | List | ✅ | ✅ | ✅ | General-purpose collection |
 | Tuple | ✅ | ❌ | ✅ | Fixed/immutable data |
 | Set | ❌ | ✅ | ❌ | Unique elements |
-| Dictionary | ✅* | ✅ | Keys unique | Key-value storage |
+| Dictionary | ✅ | ✅ | Keys unique | Key-value storage |
 
 Modern Python preserves insertion order in dictionaries.
 
