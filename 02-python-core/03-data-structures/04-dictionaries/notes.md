@@ -358,7 +358,7 @@ You should clearly understand:
 
 ---
 
-## 🧠 Data Structure Comparison
+## Data Structure Comparison
 
 | Data Structure | Ordered | Mutable | Duplicates | Key Feature |
 |----------------|---------|----------|-------------|-------------|
