@@ -1,7 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-sales_data = pd.read_csv("../assets/sales_data.csv")
+sales_data = pd.read_csv("../../resources/datasets/sales_data.csv")
 
 total_sales = (
     sales_data

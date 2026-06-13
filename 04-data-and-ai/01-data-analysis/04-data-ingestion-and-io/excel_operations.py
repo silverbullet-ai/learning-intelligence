@@ -1,7 +1,7 @@
 import pandas as pd
 
 df = pd.read_excel(
-    "../assets/data.xlsx",
+    "../../resources/datasets/data.xlsx",
     sheet_name="Sheet1"
 )
 

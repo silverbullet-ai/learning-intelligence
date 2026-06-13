@@ -7,8 +7,8 @@ data = {
 
 df = pd.DataFrame(data)
 
-df.to_pickle("../assets/data.pkl")
+df.to_pickle("../../resources/examples/data.pkl")
 
-loaded_df = pd.read_pickle("../assets/data.pkl")
+loaded_df = pd.read_pickle("../../resources/examples/data.pkl")
 
 print(loaded_df)
