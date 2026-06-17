@@ -1,11 +1,13 @@
 import logging
 
 logging.basicConfig(
-    filename="../logs/app.log",
-    filemode="a",
     level=logging.DEBUG,
-    format="%(asctime)s | %(name)s | %(levelname)s | %(message)s",
-    datefmt="%Y-%m-%d %H:%M:%S"
+    format='%(asctime)s|%(name)s|%(levelname)s|%(message)s',
+    datefmt='%Y/%m/%d %H:%M:%S',
+    handlers=[
+        logging.FileHandler('../logs/app.log'),
+        logging.StreamHandler()
+    ]
 )
 
-logger = logging.getLogger("app")
+logger = logging.getLogger("ArithmeticApp")
