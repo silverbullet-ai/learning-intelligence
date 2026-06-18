@@ -51,18 +51,6 @@ import logging
 - filename
 - filemode
 
-### Multiple Loggers
-
-In large applications, different modules often maintain separate loggers.
-
-```python
-import logging
-
-logger = logging.getLogger(
-    "authentication"
-)
-```
-
 Benefits:
 
 - Module-wise logging
