@@ -19,9 +19,11 @@ NumPy is heavily used in:
 
 ## Installation
 
+```python
 pip install numpy
 
 import numpy as np
+```
 
 ## Topics Covered
 
