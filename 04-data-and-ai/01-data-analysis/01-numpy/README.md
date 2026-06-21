@@ -36,6 +36,8 @@ import numpy as np
 - Statistical Operations
 - Boolean Indexing
 
+`refer example.ipynb`
+
 ## Why NumPy Matters
 
 NumPy introduces vectorized computation, allowing operations on entire arrays without explicit loops.

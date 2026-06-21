@@ -48,6 +48,8 @@ Data Manipulation and Analysis are core Pandas skills used for:
 - left join
 - right join
 
+`refer example.ipynb`
+
 ---
 
 ## Key Concepts

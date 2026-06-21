@@ -124,6 +124,7 @@ Most real-world data comes in tabular form:
 
 Pandas provides a consistent way to load, clean, transform, and analyze this data.
 
+`refer example.ipynb`
 ---
 
 ## Practice Assignment

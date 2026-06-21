@@ -15,6 +15,8 @@ This module covers:
 
 These capabilities make Pandas the central library for data ingestion and preprocessing in Data Analysis, Machine Learning, and AI workflows.
 
+`refer example.ipynb`
+
 ---
 
 ## Topics Covered
