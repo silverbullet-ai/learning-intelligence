@@ -9,3 +9,4 @@ matplotlib
 seaborn
 openpyxl
 html5lib
+flask
