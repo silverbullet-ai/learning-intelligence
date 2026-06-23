@@ -1,4 +1,3 @@
-
 # Flask Framework
 
 ## Overview
@@ -349,3 +348,215 @@ A URL mapped to a Python function.
 - Jinja2 creates dynamic web pages.
 - Routes map URLs to Python functions.
 - Flask is widely used for ML and AI deployment.
+
+
+# Flask Templates & Jinja2
+
+## Overview
+
+Flask provides the `render_template()` function to render HTML pages stored in the `templates` directory.
+
+Instead of writing HTML directly inside Python code, Flask encourages separation of:
+
+- Backend Logic (Python)
+- Frontend Presentation (HTML)
+
+This improves maintainability and follows modern web development practices.
+
+---
+
+## Returning HTML Directly
+
+```python
+@app.route("/")
+def home():
+    return """
+    <html>
+        <h1>Welcome to Flask</h1>
+    </html>
+    """
+```
+
+While valid, this approach becomes difficult to maintain for larger applications.
+
+---
+
+## Using render_template()
+
+```python
+from flask import Flask, render_template
+
+@app.route("/index")
+def index():
+    return render_template("index.html")
+```
+
+Flask searches for HTML files inside the `templates/` directory.
+
+---
+
+## Templates Folder Structure
+
+```text
+project/
+│
+├── app.py
+│
+└── templates/
+    ├── index.html
+    ├── about.html
+    └── contact.html
+```
+
+Important:
+
+The folder name must be:
+
+templates
+
+Flask automatically searches this folder.
+
+---
+
+## Example Route Mapping
+
+| URL      | Template     |
+| -------- | ------------ |
+| /index   | index.html   |
+| /about   | about.html   |
+| /contact | contact.html |
+
+---
+
+## Example HTML Page
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask App</title>
+</head>
+<body>
+
+<h1>Welcome to Flask</h1>
+
+<p>This is the index page.</p>
+
+</body>
+</html>
+```
+
+---
+
+## Jinja2 Template Engine
+
+Flask uses Jinja2 as its default template engine.
+
+Example:
+
+Python:
+
+```python
+return render_template(
+    "index.html",
+    name="Aahish"
+)
+```
+
+HTML:
+
+```html
+<h1>Hello {{ name }}</h1>
+```
+
+Output:
+
+```text
+Hello Aahish
+```
+
+Jinja2 allows:
+
+- Variable Rendering
+- Loops
+- Conditions
+- Dynamic Pages
+
+---
+
+## Common Errors
+
+### TemplateNotFound
+
+```python
+return render_template("index.html")
+```
+
+but:
+
+```text
+templates/
+└── index1.html
+```
+
+Error:
+
+```text
+TemplateNotFound: index.html
+```
+
+---
+
+### Wrong Folder Name
+
+Wrong:
+
+```text
+template/
+```
+
+Correct:
+
+```text
+templates/
+```
+
+---
+
+## Why Templates?
+
+Benefits:
+
+- Cleaner Code
+- Frontend/Backend Separation
+- Easier Maintenance
+- Better Collaboration
+
+---
+
+## Interview Questions
+
+### What is render_template()?
+
+Used to render HTML files from the templates directory.
+
+### Which template engine does Flask use?
+
+Jinja2
+
+### Where should HTML files be stored?
+
+Inside the templates folder.
+
+### What causes TemplateNotFound?
+
+Missing or incorrectly named template files.
+
+---
+
+## Key Takeaways
+
+- Flask uses render_template() to serve HTML pages.
+- HTML files belong inside the templates directory.
+- Jinja2 powers dynamic web page rendering.
+- Templates help separate frontend and backend code.
