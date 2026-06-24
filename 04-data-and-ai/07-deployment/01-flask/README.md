@@ -311,19 +311,19 @@ pip install flask
 
 ### What is Flask?
 
-A lightweight Python web framework used to build web applications and APIs.
+> A lightweight Python web framework used to build web applications and APIs.
 
 ### What does WSGI stand for?
 
-Web Server Gateway Interface.
+> Web Server Gateway Interface.
 
 ### What is Jinja2?
 
-Flask's template engine used for dynamic web pages.
+> Flask's template engine used for dynamic web pages.
 
 ### What is a Route?
 
-A URL mapped to a Python function.
+> A URL mapped to a Python function.
 
 ### Why use debug=True?
 
@@ -333,11 +333,11 @@ A URL mapped to a Python function.
 
 ### What is the default Flask port?
 
-5000
+> 5000
 
 ### What is localhost?
 
-127.0.0.1
+> 127.0.0.1
 
 ---
 
