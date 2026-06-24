@@ -595,8 +595,6 @@ Flask uses GET as the default method.
 
 ---
 
-## POST Request
-
 ### POST Request
 
 POST is used to send information from the client to the server.
@@ -616,16 +614,11 @@ Flask provides the request object for accessing incoming requests.
 
 ```python
 from flask import request
-
----
-
+```
 
 ---
 
 ## request Object
-
-```markdown
-### request Object
 
 Common attributes:
 
@@ -638,37 +631,4 @@ Example:
 
 ```python
 request.form["name"]
-```
-
----
-
-# app-forms.py
-
-```python
-from flask import Flask, render_template, request
-
-app = Flask(__name__)
-
-
-@app.route("/")
-def home():
-    return render_template("index.html")
-
-
-@app.route("/form", methods=["GET", "POST"])
-def form():
-
-    if request.method == "POST":
-        name = request.form["name"]
-
-        return render_template(
-            "success.html",
-            name=name
-        )
-
-    return render_template("form.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True)
 ```
