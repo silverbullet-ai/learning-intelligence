@@ -349,7 +349,6 @@ A URL mapped to a Python function.
 - Routes map URLs to Python functions.
 - Flask is widely used for ML and AI deployment.
 
-
 # Flask Templates & Jinja2
 
 ## Overview
@@ -538,19 +537,19 @@ Benefits:
 
 ### What is render_template()?
 
-Used to render HTML files from the templates directory.
+> Used to render HTML files from the templates directory.
 
 ### Which template engine does Flask use?
 
-Jinja2
+> Jinja2
 
 ### Where should HTML files be stored?
 
-Inside the templates folder.
+> Inside the templates folder.
 
 ### What causes TemplateNotFound?
 
-Missing or incorrectly named template files.
+> Missing or incorrectly named template files.
 
 ---
 
@@ -562,16 +561,17 @@ Missing or incorrectly named template files.
 - Templates help separate frontend and backend code.
 
 ---
+
 ## HTTP Methods
 
 HTTP methods define the action performed between a client and a server.
 
-| Method | Purpose |
-|----------|----------|
-| GET | Retrieve data |
-| POST | Send data |
-| PUT | Update data |
-| DELETE | Delete data |
+| Method | Purpose       |
+| ------ | ------------- |
+| GET    | Retrieve data |
+| POST   | Send data     |
+| PUT    | Update data   |
+| DELETE | Delete data   |
 
 In Flask, GET and POST are the most commonly used methods.
 
@@ -588,6 +588,7 @@ Example:
 def home():
     return render_template("index.html")
 ```
+
 Flask uses GET as the default method.
 
 ---
@@ -638,6 +639,7 @@ Example:
 ```python
 request.form["name"]
 ```
+
 ---
 
 # app-forms.py
