@@ -560,3 +560,113 @@ Missing or incorrectly named template files.
 - HTML files belong inside the templates directory.
 - Jinja2 powers dynamic web page rendering.
 - Templates help separate frontend and backend code.
+
+---
+## HTTP Methods
+
+HTTP methods define the action performed between a client and a server.
+
+| Method | Purpose |
+|----------|----------|
+| GET | Retrieve data |
+| POST | Send data |
+| PUT | Update data |
+| DELETE | Delete data |
+
+In Flask, GET and POST are the most commonly used methods.
+
+---
+
+### GET Request
+
+GET is used to retrieve information from a server.
+
+Example:
+
+```python
+@app.route("/")
+def home():
+    return render_template("index.html")
+```
+Flask uses GET as the default method.
+
+---
+
+---
+
+## POST Request
+
+### POST Request
+
+POST is used to send information from the client to the server.
+
+Common examples:
+
+- Login Forms
+- Registration Forms
+- Contact Forms
+- Search Forms
+
+---
+
+### Handling Forms
+
+Flask provides the request object for accessing incoming requests.
+
+```python
+from flask import request
+
+---
+
+
+---
+
+## request Object
+
+```markdown
+### request Object
+
+Common attributes:
+
+- request.method
+- request.form
+- request.args
+- request.files
+
+Example:
+
+```python
+request.form["name"]
+```
+---
+
+# app-forms.py
+
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
+
+@app.route("/form", methods=["GET", "POST"])
+def form():
+
+    if request.method == "POST":
+        name = request.form["name"]
+
+        return render_template(
+            "success.html",
+            name=name
+        )
+
+    return render_template("form.html")
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
+```
