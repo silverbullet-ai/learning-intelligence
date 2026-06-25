@@ -632,3 +632,212 @@ Example:
 ```python
 request.form["name"]
 ```
+
+## Dynamic URL Routing
+
+Flask supports dynamic URL parameters through **Variable Rules**.
+
+Example:
+
+```python
+@app.route("/success/<score>")
+def success(score):
+    return f"Marks = {score}"
+```
+
+URL:
+
+```
+/success/85
+```
+
+Output:
+
+```
+Marks = 85
+```
+
+---
+
+### Variable Converters
+
+| Converter | Description |
+|-----------|-------------|
+| string | Default string |
+| int | Integer |
+| float | Decimal number |
+| path | File path |
+| uuid | UUID value |
+
+Example:
+
+```python
+@app.route("/student/<int:id>")
+```
+
+---
+
+## redirect()
+
+The `redirect()` function sends the client to another route.
+
+Example:
+
+```python
+return redirect("/success")
+```
+
+It is commonly used after processing forms.
+
+---
+
+## url_for()
+
+`url_for()` generates URLs dynamically using route function names.
+
+Example:
+
+```python
+url_for("success", score=85)
+```
+
+Generated URL:
+
+```
+/success/85
+```
+
+Benefits:
+
+- No hardcoded URLs
+- Easier maintenance
+- Safer refactoring
+
+---
+
+## Jinja2 Template Engine
+
+Jinja2 is Flask's default template engine.
+
+It allows Python variables to be rendered inside HTML templates.
+
+Example:
+
+```python
+return render_template(
+    "result.html",
+    name="Aahish"
+)
+```
+
+HTML:
+
+```html
+<h1>Hello {{ name }}</h1>
+```
+
+---
+
+## Jinja2 Syntax
+
+### Expressions
+
+```html
+{{ variable }}
+```
+
+Used to display values.
+
+---
+
+### Control Statements
+
+```html
+{% if score >= 50 %}
+{% endif %}
+```
+
+Supports:
+
+- if
+- elif
+- else
+- for
+
+---
+
+### Comments
+
+```html
+{# This comment is hidden #}
+```
+
+---
+
+## Passing Data to Templates
+
+Python:
+
+```python
+return render_template(
+    "result.html",
+    score=88
+)
+```
+
+HTML:
+
+```html
+<h2>{{ score }}</h2>
+```
+
+## Jinja2 If Statement
+
+```html
+{% if score >= 50 %}
+<h1>Pass</h1>
+{% else %}
+<h1>Fail</h1>
+{% endif %}
+```
+
+## Jinja2 For Loop
+
+Python:
+
+```python
+data = {
+    "score": 80,
+    "result": "Pass"
+}
+```
+
+HTML:
+
+```html
+{% for key, value in data.items() %}
+<h3>{{ key }}</h3>
+<p>{{ value }}</p>
+{% endfor %}
+```
+
+## Request Flow
+
+```
+Browser
+   │
+   ▼
+HTML Form
+   │
+POST Request
+   │
+Flask Route
+   │
+Business Logic
+   │
+redirect(url_for(...))
+   │
+Jinja2 Template
+   │
+Response
+```
