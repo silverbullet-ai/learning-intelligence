@@ -337,7 +337,7 @@ pip install flask
 
 ### What is localhost?
 
-> 127.0.0.1
+> git commit -m "feat(flask): add form handling, routing, and Jinja2 templates"127.0.0.1
 
 ---
 
@@ -661,13 +661,13 @@ Marks = 85
 
 ### Variable Converters
 
-| Converter | Description |
-|-----------|-------------|
-| string | Default string |
-| int | Integer |
-| float | Decimal number |
-| path | File path |
-| uuid | UUID value |
+| Converter | Description    |
+| --------- | -------------- |
+| string    | Default string |
+| int       | Integer        |
+| float     | Decimal number |
+| path      | File path      |
+| uuid      | UUID value     |
 
 Example:
 
