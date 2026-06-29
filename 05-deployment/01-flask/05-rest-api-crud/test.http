@@ -1,0 +1,26 @@
+###
+GET http://127.0.0.1:5000/items
+
+###
+GET http://127.0.0.1:5000/items/1
+
+###
+POST http://127.0.0.1:5000/items
+Content-Type: application/json
+
+{
+    "name":"Learn REST APIs",
+    "description":"Practice CRUD"
+}
+
+###
+PUT http://127.0.0.1:5000/items/1
+Content-Type: application/json
+
+{
+    "name":"Learn Flask Updated",
+    "description":"Updated Description"
+}
+
+###
+DELETE http://127.0.0.1:5000/items/1
