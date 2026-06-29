@@ -382,3 +382,108 @@ Returning raw Python objects instead of JSON.
 ## One-Line Summary
 
 REST APIs allow applications to exchange data using HTTP methods, with Flask providing a simple way to build CRUD APIs that communicate through JSON.
+
+---
+
+## Running the REST API
+
+### 1. Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+### 2. Start the Flask Server
+
+```bash
+python app.py
+```
+
+Output:
+
+```
+* Running on http://127.0.0.1:5000
+```
+
+Keep the server running while testing the API.
+
+---
+
+### 3. Install REST Client (VS Code)
+
+1. Open **Extensions** (`Ctrl + Shift + X`)
+2. Search for **REST Client**
+3. Install the extension by **Huachao Mao**
+
+---
+
+### 4. Open `test.http`
+
+This file contains all API requests used in this project.
+
+Example:
+
+```http
+GET http://127.0.0.1:5000/items
+```
+
+---
+
+### 5. Execute Requests
+
+Click **Send Request** above any request.
+
+You can test:
+
+- GET
+- POST
+- PUT
+- DELETE
+
+without opening Postman.
+
+---
+
+### 6. Multiple Requests
+
+Requests are separated using:
+
+```http
+###
+```
+
+Example:
+
+```http
+###
+GET http://127.0.0.1:5000/items
+
+###
+POST http://127.0.0.1:5000/items
+Content-Type: application/json
+
+{
+    "name": "Learn Flask",
+    "description": "CRUD Operations"
+}
+```
+
+Each section gets its own **Send Request** button.
+
+---
+
+### 7. Verify CRUD Operations
+
+1. **GET** → Retrieve all items.
+2. **POST** → Create a new item.
+3. **GET** → Verify the item was created.
+4. **PUT** → Update the item.
+5. **GET** → Verify the update.
+6. **DELETE** → Remove the item.
+7. **GET** → Confirm the item has been deleted.
+
+> **Note**
+>
+> The VS Code REST Client is sufficient for learning and developing REST APIs. In professional environments, tools like **Postman** are commonly used for API collections, authentication testing, automated testing, and team collaboration.
