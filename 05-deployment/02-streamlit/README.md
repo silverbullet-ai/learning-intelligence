@@ -36,6 +36,13 @@ Streamlit is widely used for:
 - Interview Questions
 
 ---
+## requirements
+
+- streamlit
+- pandas
+- numpy
+
+---
 
 ## What is Streamlit?
 
