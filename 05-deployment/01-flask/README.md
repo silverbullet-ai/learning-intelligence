@@ -307,40 +307,6 @@ pip install flask
 
 ---
 
-## Interview Questions
-
-### What is Flask?
-
-> A lightweight Python web framework used to build web applications and APIs.
-
-### What does WSGI stand for?
-
-> Web Server Gateway Interface.
-
-### What is Jinja2?
-
-> Flask's template engine used for dynamic web pages.
-
-### What is a Route?
-
-> A URL mapped to a Python function.
-
-### Why use debug=True?
-
-- Auto reload
-- Better debugging
-- Faster development
-
-### What is the default Flask port?
-
-> 5000
-
-### What is localhost?
-
-> git commit -m "feat(flask): add form handling, routing, and Jinja2 templates"127.0.0.1
-
----
-
 ## Key Takeaways
 
 - Flask is lightweight and beginner-friendly.
