@@ -1,4 +1,3 @@
-
 # Flask Introduction
 
 ## Overview
@@ -576,70 +575,6 @@ Solution:
 ```bash
 pip install flask
 ```
-
----
-
-# Interview Questions
-
-### What is Flask?
-
-A lightweight Python web framework used to build web applications and REST APIs.
-
----
-
-### What is WSGI?
-
-Web Server Gateway Interface.
-
----
-
-### Why is WSGI important?
-
-It acts as the communication bridge between web servers and Python applications.
-
----
-
-### What does `app = Flask(__name__)` do?
-
-Creates the Flask application instance and initializes the WSGI application.
-
----
-
-### What is a Route?
-
-A route maps a URL to a Python function.
-
----
-
-### What is the purpose of `@app.route()`?
-
-It associates a URL with a specific Python function.
-
----
-
-### Why do we use Debug Mode?
-
-- Automatic server reload
-- Better error messages
-- Faster development
-
----
-
-### What is the default Flask port?
-
-```
-5000
-```
-
----
-
-### What is localhost?
-
-```
-127.0.0.1
-```
-
-The loopback address that points to the current machine.
 
 ---
 
