@@ -11,3 +11,4 @@ openpyxl
 html5lib
 flask
 streamlit
+statistics
