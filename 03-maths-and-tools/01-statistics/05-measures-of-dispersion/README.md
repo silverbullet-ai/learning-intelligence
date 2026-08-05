@@ -392,6 +392,283 @@ Population Variance divides by **N**, whereas Sample Variance divides by **n −
 
 ---
 
+# Why Do We Divide Sample Variance by (n − 1)?
+
+One of the most common interview questions in Statistics is:
+
+> **Why do we divide Sample Variance by (n − 1) instead of n?**
+
+The answer lies in the fact that a **sample is only an estimate of the population**, not the complete dataset.
+
+---
+
+## Understanding the Problem
+
+Suppose we have a very large population.
+
+```text
+Population
+┌───────────────────────────┐
+│ Thousands of observations │
+└───────────────────────────┘
+```
+
+Instead of collecting every observation, we select a sample.
+
+```text
+Population
+
+        ↓
+
+Sample
+```
+
+The goal is to estimate:
+
+- Population Mean (μ)
+- Population Variance (σ²)
+
+using only the sample.
+
+---
+
+## Case 1: A Good Random Sample
+
+Imagine the population is evenly distributed.
+
+```text
+          Population
+
+              μ
+
+      . . . . | . . . .
+```
+
+Now suppose the sample is collected from all regions of the population.
+
+```text
+Sample
+
+x   x   x   x   x
+```
+
+In this case:
+
+```text
+Sample Mean (X̄)
+
+≈
+
+Population Mean (μ)
+```
+
+and
+
+```text
+Sample Variance
+
+≈
+
+Population Variance
+```
+
+The sample provides a good estimate of the population.
+
+---
+
+## Case 2: A Poor Sample
+
+Suppose the sample is collected only from one side of the population.
+
+```text
+Population
+
+. . . . . . . . . . . . .
+
+            μ
+
+Sample
+
+x x x x
+```
+
+Now,
+
+```text
+Sample Mean (X̄)
+
+≠
+
+Population Mean (μ)
+```
+
+Since all selected observations are close together,
+
+```text
+Sample Variance
+
+<
+
+Population Variance
+```
+
+The variance is underestimated.
+
+---
+
+## Why Dividing by n Causes Underestimation
+
+Suppose
+
+```text
+Σ(X − X̄)² = 100
+
+n = 10
+```
+
+Using **n**
+
+```text
+100 / 10 = 10
+```
+
+Using **n − 1**
+
+```text
+100 / 9 = 11.11
+```
+
+Notice that
+
+```text
+11.11 > 10
+```
+
+Dividing by **n − 1** produces a slightly larger estimate that compensates for the tendency of samples to underestimate the true population variance.
+
+This adjustment is known as **Bessel's Correction**.
+
+---
+
+# Bessel's Correction
+
+Using
+
+```text
+n − 1
+```
+
+instead of
+
+```text
+n
+```
+
+when calculating Sample Variance is called **Bessel's Correction**.
+
+Its purpose is to provide a less biased estimate of the population variance.
+
+---
+
+# Degree of Freedom (DOF)
+
+Another way interviewers explain this concept is using **Degrees of Freedom**.
+
+For Sample Variance,
+
+```text
+DOF = n − 1
+```
+
+### Why?
+
+Suppose:
+
+```text
+Sample Size = 4
+
+Mean = 10
+```
+
+Three observations are:
+
+```text
+8
+
+10
+
+12
+```
+
+Their total is:
+
+```text
+30
+```
+
+Since the total of all observations must be:
+
+```text
+40
+```
+
+the fourth observation must be:
+
+```text
+10
+```
+
+Only **three values were free to vary**.
+
+Therefore,
+
+```text
+DOF = 4 − 1 = 3
+```
+
+---
+
+# Population vs Sample Variance (Quick Recap)
+
+| Population Variance | Sample Variance |
+|---------------------|-----------------|
+| Uses μ | Uses X̄ |
+| Divide by N | Divide by n − 1 |
+| Exact variance | Estimate of variance |
+| No correction required | Uses Bessel's Correction |
+
+---
+
+# Memory Trick
+
+```text
+Population knows everything
+
+↓
+
+Divide by N
+```
+
+```text
+Sample only estimates
+
+↓
+
+Divide by n − 1
+```
+
+---
+
+# Interview Question
+
+### Why do we divide Sample Variance by (n − 1) instead of n?
+
+Using **n** tends to underestimate the true population variance because the sample mean is calculated from the same sample.
+
+Dividing by **n − 1** (Bessel's Correction) compensates for this bias and produces a better estimate of the population variance.
+
+The quantity **n − 1** is also known as the **Degree of Freedom (DOF)**.
+
 # Key Takeaways
 
 - Measures of Dispersion describe the spread of data.
