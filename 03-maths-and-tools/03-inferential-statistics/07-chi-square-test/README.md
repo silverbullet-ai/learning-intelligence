@@ -1,11 +1,6 @@
-```
-```
-
-````
 # Chi-Square Test
 
-The **Chi-Square Test ($\chi^2$)** is a statistical test used for
-categorical data.
+* [ ] 
 
 This section focuses on the **Chi-Square Goodness-of-Fit Test**, which is
 used to determine whether an observed categorical distribution fits a
@@ -140,11 +135,11 @@ This represents the theoretical categorical distribution.
 
 A sample produces:
 
-| Bike Color | Observed |
-|---|---:|
-| Yellow | 22 |
-| Red | 17 |
-| Orange | 59 |
+| Bike Color      |     Observed |
+| --------------- | -----------: |
+| Yellow          |           22 |
+| Red             |           17 |
+| Orange          |           59 |
 | **Total** | **98** |
 
 The Chi-Square Goodness-of-Fit Test can be used to determine whether this
@@ -197,10 +192,10 @@ $$
 
 Therefore:
 
-| Category | Observed |
-|---|---:|
-| Left-handed | 11 |
-| Right-handed | 64 |
+| Category        |     Observed |
+| --------------- | -----------: |
+| Left-handed     |           11 |
+| Right-handed    |           64 |
 | **Total** | **75** |
 
 ---
@@ -233,10 +228,10 @@ $$
 
 Therefore:
 
-| Category | Observed | Expected |
-|---|---:|---:|
-| Left-handed | 11 | 9 |
-| Right-handed | 64 | 66 |
+| Category        |     Observed |     Expected |
+| --------------- | -----------: | -----------: |
+| Left-handed     |           11 |            9 |
+| Right-handed    |           64 |           66 |
 | **Total** | **75** | **75** |
 
 The observed distribution is:
@@ -271,20 +266,20 @@ Consider the following example.
 
 A city's **2010 census** reported this weight distribution:
 
-| Weight Category | 2010 Population |
-|---|---:|
-| Less than 50 kg | 20% |
-| 50–75 kg | 30% |
-| Greater than 75 kg | 50% |
+| Weight Category    | 2010 Population |
+| ------------------ | --------------: |
+| Less than 50 kg    |             20% |
+| 50–75 kg          |             30% |
+| Greater than 75 kg |             50% |
 
 In 2020, a sample of 500 individuals was collected:
 
-| Weight Category | 2020 Observed |
-|---|---:|
-| Less than 50 kg | 140 |
-| 50–75 kg | 160 |
-| Greater than 75 kg | 200 |
-| **Total** | **500** |
+| Weight Category    | 2020 Observed |
+| ------------------ | ------------: |
+| Less than 50 kg    |           140 |
+| 50–75 kg          |           160 |
+| Greater than 75 kg |           200 |
+| **Total**    | **500** |
 
 At:
 
@@ -323,12 +318,12 @@ $$
 
 The 2020 sample provides the observed values:
 
-| Weight Category | Observed ($O$) |
-|---|---:|
-| Less than 50 kg | 140 |
-| 50–75 kg | 160 |
-| Greater than 75 kg | 200 |
-| **Total** | **500** |
+| Weight Category    | Observed ($O$) |
+| ------------------ | ---------------: |
+| Less than 50 kg    |              140 |
+| 50–75 kg          |              160 |
+| Greater than 75 kg |              200 |
+| **Total**    |    **500** |
 
 ---
 
@@ -369,12 +364,12 @@ $$
 
 Therefore:
 
-| Weight Category | Observed ($O$) | Expected ($E$) |
-|---|---:|---:|
-| Less than 50 kg | 140 | 100 |
-| 50–75 kg | 160 | 150 |
-| Greater than 75 kg | 200 | 250 |
-| **Total** | **500** | **500** |
+| Weight Category    | Observed ($O$) | Expected ($E$) |               |
+| ------------------ | ----------------------------------: | ------------: |
+| Less than 50 kg    |                                 140 |           100 |
+| 50–75 kg          |                                 160 |           150 |
+| Greater than 75 kg |                                 200 |           250 |
+| **Total**    |                       **500** | **500** |
 
 ---
 
@@ -577,7 +572,7 @@ $$
 \approx0.67
 $$
 
-### Category 3 — Greater than 75 kg
+* [ ] Category 3 — Greater than 75 kg
 
 $$
 \frac{(200-250)^2}{250}
@@ -678,7 +673,7 @@ with χ² critical
 Reject H₀    Fail to reject H₀
         ↓
 Statistical Conclusion
-````
+```
 
 ---
 
@@ -740,26 +735,26 @@ O\rightarrow E\rightarrow H\rightarrow df
 
 Where:
 
-- **O** → Observed 
-- **E** → Expected 
-- **H** → Hypothesis 
-- **df** → Degrees of Freedom 
-- **Critical Value** → Chi-Square critical value 
-- **$\chi^2$** → Chi-Square test statistic 
-- **Compare** → Compare calculated and critical values 
-- **Conclusion** → Reject or fail to reject $H\_0$ 
+- **O** → Observed
+- **E** → Expected
+- **H** → Hypothesis
+- **df** → Degrees of Freedom
+- **Critical Value** → Chi-Square critical value
+- **$\chi^2$** → Chi-Square test statistic
+- **Compare** → Compare calculated and critical values
+- **Conclusion** → Reject or fail to reject $H\_0$
 
 ---
 
 # Key Takeaways
 
--  Chi-Square Goodness-of-Fit is used for **categorical data**. 
--  It compares an **observed categorical distribution** with a
-   **theoretical/expected distribution**. 
--  Expected values are calculated from theoretical proportions. 
--  Observed values come directly from the sample. 
--  The test is a **non-parametric test**. 
--  The test statistic is: 
+- Chi-Square Goodness-of-Fit is used for **categorical data**.
+- It compares an **observed categorical distribution** with a
+  **theoretical/expected distribution**.
+- Expected values are calculated from theoretical proportions.
+- Observed values come directly from the sample.
+- The test is a **non-parametric test**.
+- The test statistic is:
 
 ```math
 \chi^2=
@@ -767,22 +762,20 @@ Where:
 \frac{(O-E)^2}{E}
 ```
 
--  Degrees of freedom are: 
+- Degrees of freedom are:
 
 ```math
 df=k-1
 ```
 
--  The Chi-Square distribution is not symmetrical. 
--  The goodness-of-fit test uses a right-side critical boundary. 
--  If the calculated Chi-Square statistic exceeds the critical value,
-   reject $H\_0$. 
--  Otherwise, fail to reject $H\_0$. 
+- The Chi-Square distribution is not symmetrical.
+- The goodness-of-fit test uses a right-side critical boundary.
+- If the calculated Chi-Square statistic exceeds the critical value,
+  reject $H\_0$.
+- Otherwise, fail to reject $H\_0$.
 
 ---
 
 ## Core Idea
 
-> **Chi-Square Goodness of Fit = Observed Distribution vs Expected**
-> **
-> Distribution**
+> **Chi-Square Goodness of Fit = Observed Distribution vs Expected Distribution**
