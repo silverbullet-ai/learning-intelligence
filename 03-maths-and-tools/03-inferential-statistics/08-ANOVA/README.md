@@ -1,4 +1,5 @@
 # Analysis of Variance (ANOVA)
+[View f-Table](../resources/statistical-tables/f-table.pdf)
 
 **ANOVA** stands for **Analysis of Variance**.
 

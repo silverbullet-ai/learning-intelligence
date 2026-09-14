@@ -1,4 +1,5 @@
 # Student's t-Distribution and t-Test
+[View t-Table](../resources/statistical-tables/t-table.pdf)
 
 ## Overview
 

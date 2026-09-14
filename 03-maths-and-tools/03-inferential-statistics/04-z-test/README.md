@@ -1,4 +1,5 @@
-# Z-Test
+# Z-Test 
+[View Z-Table](../resources/statistical-tables/z-table.pdf)
 
 ## Overview
 
@@ -21,13 +22,13 @@ The Z-test is closely connected to:
 
 Different statistical tests are used for different types of problems.
 
-| Test | Common Use |
-|---|---|
-| **Z-Test** | Population mean when $\sigma$ is known |
-| **T-Test** | Population mean when $\sigma$ is unknown |
+| Test                      | Common Use                                             |
+| ------------------------- | ------------------------------------------------------ |
+| **Z-Test**          | Population mean when$\sigma$ is known                |
+| **T-Test**          | Population mean when$\sigma$ is unknown              |
 | **Chi-Square Test** | Categorical data, variance-related tests, independence |
-| **ANOVA** | Comparing means across multiple groups |
-| **F-Test** | Comparing variances and related statistical procedures |
+| **ANOVA**           | Comparing means across multiple groups                 |
+| **F-Test**          | Comparing variances and related statistical procedures |
 
 The appropriate test depends on the:
 
@@ -556,11 +557,11 @@ There is sufficient evidence at the 2% significance level to support the claim t
 
 # One-Tailed vs Two-Tailed Tests
 
-| Test | Alternate Hypothesis | Direction |
-|---|---|---|
-| **Two-Tailed** | $H_1: \mu \neq \mu_0$ | Both directions |
-| **Left-Tailed** | $H_1: \mu < \mu_0$ | Lower values |
-| **Right-Tailed** | $H_1: \mu > \mu_0$ | Higher values |
+| Test                   | Alternate Hypothesis    | Direction       |
+| ---------------------- | ----------------------- | --------------- |
+| **Two-Tailed**   | $H_1: \mu \neq \mu_0$ | Both directions |
+| **Left-Tailed**  | $H_1: \mu < \mu_0$    | Lower values    |
+| **Right-Tailed** | $H_1: \mu > \mu_0$    | Higher values   |
 
 ---
 
@@ -678,6 +679,7 @@ p \geq \alpha
 $$
 
   → Fail to Reject $H_0$.
+
 - **Fail to Reject $H_0$** does not prove that $H_0$ is true.
 
 ---
@@ -807,3 +809,4 @@ Critical Value     P-Value
        ┌─────┴─────┐
        ▼           ▼
    Reject H₀   Fail to Reject H₀
+```

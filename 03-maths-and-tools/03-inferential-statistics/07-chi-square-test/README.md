@@ -1,6 +1,6 @@
 # Chi-Square Test
+[View Chi-Square Table](../resources/statistical-tables/Chi-square-table.pdf)
 
-* [ ] 
 
 This section focuses on the **Chi-Square Goodness-of-Fit Test**, which is
 used to determine whether an observed categorical distribution fits a
