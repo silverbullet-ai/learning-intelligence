@@ -1,7 +1,3 @@
-```
-```
-
-````
 # Handling Missing Values
 
 Handling missing values is one of the fundamental techniques in Feature Engineering.
@@ -131,11 +127,11 @@ So the missing data is not random.
 
 # 6. MCAR vs MAR vs MNAR
 
-| Mechanism | Full Form | Main Idea |
-|---|---|---|
-| MCAR | Missing Completely At Random | No systematic reason for missingness |
-| MAR | Missing At Random | Missingness depends on observed data |
-| MNAR | Missing Data Not At Random | Missingness depends on the missing value itself or associated factors |
+| Mechanism | Full Form                    | Main Idea                                                             |
+| --------- | ---------------------------- | --------------------------------------------------------------------- |
+| MCAR      | Missing Completely At Random | No systematic reason for missingness                                  |
+| MAR       | Missing At Random            | Missingness depends on observed data                                  |
+| MNAR      | Missing Data Not At Random   | Missingness depends on the missing value itself or associated factors |
 
 ### Easy Memory Trick
 
@@ -143,18 +139,15 @@ So the missing data is not random.
 MCAR → Completely random
 MAR  → Related to observed data
 MNAR → Related to the missing information itself
-````
+```
 
 ---
 
 # 7. Titanic Dataset Example
 
-The lecture uses the **Titanic dataset from Seaborn** because it contains many missing values.
+Let's use **Titanic dataset from Seaborn** because it contains many missing values.
 
-```
-```
-
-```
+```Python
 import seaborn as sns
 
 df = sns.load_dataset("titanic")
@@ -162,10 +155,7 @@ df = sns.load_dataset("titanic")
 
 To view the first few rows:
 
-```
-```
-
-```
+```Python
 df.head()
 ```
 
@@ -175,24 +165,18 @@ df.head()
 
 To check where missing values exist:
 
-```
-```
-
-```
+```Python
 df.isnull()
 ```
 
 This returns:
 
-- `True` → value is missing 
-- `False` → value is present 
+- `True` → value is missing
+- `False` → value is present
 
 To count missing values in each column:
 
-```
-```
-
-```
+```Python
 df.isnull().sum()
 ```
 
@@ -204,10 +188,7 @@ This gives the number of null values in each column.
 
 One simple way of handling missing values is to delete rows containing missing values.
 
-```
-```
-
-```
+```Python
 df.dropna()
 ```
 
@@ -217,20 +198,12 @@ By default, this removes rows containing missing values.
 
 Row deletion can cause a huge loss of data.
 
-In the lecture example:
-
-```
-```
-
 ```
 Original data points → 891
 After dropping rows → 182
 ```
 
 Therefore:
-
-```
-```
 
 ```
 891 → 182
@@ -252,17 +225,11 @@ In that situation, it may be reasonable to remove the entire column.
 
 For example, the `deck` column contains a large number of missing values.
 
-```
-```
-
-```
+```Python
 df.dropna(axis=1)
 ```
 
 ### `axis`
-
-```
-```
 
 ```
 axis = 0 → rows
@@ -271,10 +238,7 @@ axis = 1 → columns
 
 To make the operation permanent:
 
-```
-```
-
-```
+```Python
 df.dropna(axis=1, inplace=True)
 ```
 
@@ -290,12 +254,11 @@ Instead of deleting data, we can replace missing values.
 
 This process is called **Imputation**.
 
-The lecture covers:
 
-1.  Mean imputation 
-2.  Median imputation 
-3.  Mode imputation 
-4.  Random sample imputation 
+1. Mean imputation
+2. Median imputation
+3. Mode imputation
+4. Random sample imputation
 
 ---
 
@@ -306,9 +269,6 @@ The lecture covers:
 Mean imputation replaces missing values with the mean of that column.
 
 ```
-```
-
-```
 Missing Value → Column Mean
 ```
 
@@ -316,25 +276,14 @@ For example, suppose there are missing values in the `age` column.
 
 First, calculate the mean:
 
-```
-```
-
-```
+```Python
 df["age"].mean()
 ```
 
 Then replace missing values:
 
-```
-```
-
-```
+```Python
 df["age"].fillna(df["age"].mean())
-```
-
-The lecture obtains approximately:
-
-```
 ```
 
 ```
@@ -345,10 +294,7 @@ Therefore, a missing age can be replaced with approximately `29.699`.
 
 ### Creating a New Column
 
-```
-```
-
-```
+```Python
 df["age_mean"] = df["age"].fillna(df["age"].mean())
 ```
 
@@ -357,9 +303,6 @@ Now the missing values in `age_mean` are replaced by the mean.
 ## When to Use Mean Imputation?
 
 Mean imputation works well when numerical data is normally distributed.
-
-```
-```
 
 ```
 Normally Distributed Data → Mean Imputation
@@ -376,34 +319,21 @@ If the data is skewed or contains outliers, median imputation can be preferred.
 Median imputation replaces missing values with the median of the column.
 
 ```
-```
-
-```
 Missing Value → Column Median
 ```
 
 Example:
 
-```
-```
-
-```
+```Python
 df["age"].fillna(df["age"].median())
 ```
 
 Or save the result in a new column:
 
-```
-```
-
-```
+```Python
 df["age_median"] = df["age"].fillna(df["age"].median())
 ```
 
-In the lecture example:
-
-```
-```
 
 ```
 Median age ≈ 28
@@ -412,9 +342,6 @@ Median age ≈ 28
 So missing values are replaced with approximately `28`.
 
 ### When to Use?
-
-```
-```
 
 ```
 Outliers / Skewed Data → Median Imputation
@@ -435,9 +362,6 @@ The median is less affected by extreme values than the mean.
 ### Easy Rule
 
 ```
-```
-
-```
 Normal → Mean
 Outliers / Skew → Median
 ```
@@ -449,9 +373,6 @@ Outliers / Skew → Median
 Mode imputation is generally used for categorical variables.
 
 ```
-```
-
-```
 Categorical Variable → Mode Imputation
 ```
 
@@ -459,17 +380,11 @@ Categorical Variable → Mode Imputation
 
 First, check its unique values:
 
-```
-```
-
-```
+```Python
 df["embarked"].unique()
 ```
 
 Possible values include:
-
-```
-```
 
 ```
 S
@@ -482,16 +397,8 @@ Since `embarked` is categorical, we can use the mode.
 
 Find the mode:
 
-```
-```
-
-```
+```Python
 df["embarked"].mode()
-```
-
-In the lecture example, the mode is:
-
-```
 ```
 
 ```
@@ -500,19 +407,13 @@ S
 
 Then replace missing values:
 
-```
-```
-
-```
+```Python
 df["embarked"].fillna(df["embarked"].mode()[0])
 ```
 
 Or save it into a new column:
 
-```
-```
-
-```
+```Python
 df["embarked_mode"] = df["embarked"].fillna(
     df["embarked"].mode()[0]
 )
@@ -526,25 +427,17 @@ Now the missing values are replaced by the most frequently occurring category.
 
 After imputation, check the number of missing values:
 
-```
-```
-
-```
+```Python
 df["embarked_mode"].isnull().sum()
 ```
 
 Expected output:
 
 ```
-```
-
-```
 0
 ```
 
 This means there are no remaining null values in that column.
-
-In the lecture example, the original `embarked` column contained two missing values.
 
 ---
 
@@ -556,13 +449,10 @@ Another technique discussed is **Random Sample Imputation**.
 
 Instead of replacing all missing values with the same mean, median, or mode:
 
-1.  Select a random value from the existing values in the column. 
-2.  Replace the missing value with that randomly selected value. 
+1. Select a random value from the existing values in the column.
+2. Replace the missing value with that randomly selected value.
 
 Conceptually:
-
-```
-```
 
 ```
 Existing Values
@@ -577,9 +467,6 @@ Because the value is randomly selected, the replacement can change each time.
 ---
 
 # 18. Missing Value Handling Overview
-
-```
-```
 
 ```
                     Missing Values
@@ -636,9 +523,6 @@ Replacing missing values with suitable estimated or substitute values.
 ### Mean vs Median?
 
 ```
-```
-
-```
 Mean → Normally distributed data
 Median → Skewed data / Outliers
 ```
@@ -654,9 +538,6 @@ Because a large amount of useful data can be lost.
 ---
 
 # Quick Revision
-
-```
-```
 
 ```
 Missing Values
