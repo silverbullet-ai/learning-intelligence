@@ -592,3 +592,167 @@ Blue  → (1, 0, 0)
 ```
 
 This allows categorical information to be represented numerically without assigning an artificial numerical ranking to the categories.
+
+---
+
+# 23. Label Encoding & Ordinal Encoding
+
+*Feature Engineering — Encoding Categories With and Without Meaningful Order*
+
+This section covers two categorical data encoding techniques: **Label Encoding** and **Ordinal Encoding**. The key distinction is whether categories have a meaningful order or ranking.
+
+## 23.1. Label Encoding
+
+Label Encoding assigns a unique numerical label to each category. These numbers are identifiers, not meaningful ranks.
+
+| Color | Encoded label |
+|---|---:|
+| Blue | 0 |
+| Green | 1 |
+| Red | 2 |
+
+### Label Encoding with Scikit-Learn
+
+```python
+import pandas as pd
+from sklearn.preprocessing import LabelEncoder
+
+df = pd.DataFrame({"color": ["red", "blue", "green", "red", "blue"]})
+
+label_encoder = LabelEncoder()
+df["color_encoded"] = label_encoder.fit_transform(df["color"])
+print(df)
+```
+
+For this example, `LabelEncoder` assigns labels in alphabetically sorted order: blue → 0, green → 1, red → 2.
+
+### Encoding New Values
+
+Once the encoder is fitted, use the same encoder to transform new values:
+
+```python
+print(label_encoder.transform(["red"]))    # [2]
+print(label_encoder.transform(["blue"]))   # [0]
+print(label_encoder.transform(["green"]))  # [1]
+```
+
+**Training data:** `fit_transform(...)`  
+**New data:** `transform(...)`
+
+### The Problem with Label Encoding
+
+With blue → 0, green → 1, and red → 2, some models may treat `2 > 1 > 0` as an actual ordering. But color is **nominal**: red, green, and blue have no inherent rank.
+
+**Arbitrary label ≠ meaningful rank.**
+
+For nominal input features such as color, **One-Hot Encoding** is generally more appropriate when arbitrary numerical ordering would mislead the model.
+
+| Color | Blue | Green | Red |
+|---|---:|---:|---:|
+| Blue | 1 | 0 | 0 |
+| Green | 0 | 1 | 0 |
+| Red | 0 | 0 | 1 |
+
+> `LabelEncoder` is designed primarily for encoding target labels (`y`). For nominal input features (`X`), consider `OneHotEncoder` instead.
+
+## 23.2. When Does Ranking Make Sense?
+
+Some categorical variables have a meaningful order. For example:
+
+**High School < College < Graduate < Post Graduate**
+
+In this case, an encoding that preserves order makes sense.
+
+## 23.3. Ordinal Encoding
+
+Ordinal Encoding represents categorical variables according to their intrinsic order.
+
+| Size | Encoded value |
+|---|---:|
+| Small | 0 |
+| Medium | 1 |
+| Large | 2 |
+
+The ordering **small < medium < large** is meaningful.
+
+### Ordinal Encoding with Scikit-Learn
+
+```python
+import pandas as pd
+from sklearn.preprocessing import OrdinalEncoder
+
+df = pd.DataFrame({"size": ["small", "medium", "large", "medium", "small", "large"]})
+
+encoder = OrdinalEncoder(categories=[["small", "medium", "large"]])
+df["size_encoded"] = encoder.fit_transform(df[["size"]]).astype(int)
+print(df)
+```
+
+### Why Specify the Categories Manually?
+
+```python
+categories=[["small", "medium", "large"]]
+```
+
+This explicitly tells the encoder the intended order. The output begins at zero, but the **relative order** is preserved: `0 < 1 < 2`.
+
+### Transforming New Data
+
+```python
+print(encoder.transform([["small"]]))   # [[0.]]
+print(encoder.transform([["medium"]]))  # [[1.]]
+print(encoder.transform([["large"]]))   # [[2.]]
+```
+
+Fit on training data; transform new observations using the already-fitted encoder.
+
+## 23.4. Label Encoding vs Ordinal Encoding
+
+| Feature | Label Encoding | Ordinal Encoding |
+|---|---|---|
+| Purpose | Assign a unique label to each category | Represent meaningful category order |
+| Example | Red, Green, Blue | Small, Medium, Large |
+| Ranking meaningful? | No, not inherently | Yes |
+| Example encoding | Blue → 0, Green → 1, Red → 2 | Small → 0, Medium → 1, Large → 2 |
+| Main concern | Artificial ranking if used as an input feature | Must specify the correct order |
+
+## 23.5. Decision Rule
+
+```text
+Categorical feature
+        |
+        v
+Meaningful order?
+    /       \
+   No       Yes
+   |         |
+   v         v
+Nominal   Ordinal
+   |         |
+   v         v
+One-Hot   Ordinal
+Encoding  Encoding
+```
+
+## 23.6. Interview Revision
+
+**What is Label Encoding?** Assigning a unique numerical label to each category.
+
+**What is its major problem with nominal input features?** The numerical labels may introduce an artificial order that does not exist.
+
+**What is Ordinal Encoding?** Encoding categorical values according to their meaningful intrinsic order.
+
+**Nominal example:** Color — red, green, blue.
+
+**Ordinal example:** Size — small, medium, large.
+
+**Which encoding suits nominal categories?** One-Hot Encoding is generally appropriate.
+
+**Which encoding suits ordered categories?** Ordinal Encoding.
+
+### Final Memory Trick
+
+- **Nominal = No order → One-Hot Encoding**
+- **Ordinal = Order exists → Ordinal Encoding**
+- **Arbitrary label ≠ meaningful rank**
+
