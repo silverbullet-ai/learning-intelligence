@@ -756,3 +756,137 @@ Encoding  Encoding
 - **Ordinal = Order exists → Ordinal Encoding**
 - **Arbitrary label ≠ meaningful rank**
 
+---
+
+# 24. Target-Guided Ordinal Encoding
+
+*Feature Engineering — Encoding Categories Using Their Relationship With the Target*
+
+Target-Guided Ordinal Encoding replaces categories with numerical values derived from their relationship with a target variable. Common choices are the **mean** or **median** target value for each category.
+
+## 24.1. What Is Target-Guided Ordinal Encoding?
+
+**Category → Mean/Median of Target for That Category**
+
+Unlike label encoding, which assigns category identifiers, target-guided encoding derives values from observed target statistics.
+
+## 24.2. When Is It Useful?
+
+It can be useful for **high-cardinality** categorical variables, such as a city feature containing hundreds or thousands of unique cities. Instead of generating a separate one-hot column for each category, it creates one numerical feature.
+
+## 24.3. Example Dataset
+
+| City | Price |
+|---|---:|
+| London | 150 |
+| New York | 200 |
+| Paris | 320 |
+| Tokyo | 250 |
+| New York | 180 |
+| Paris | 300 |
+
+Here, `city` is the categorical feature and `price` is the target.
+
+## 24.4. Calculate the Mean Target for Each Category
+
+```python
+mean_price = df.groupby("city")["price"].mean()
+```
+
+- London: 150
+- New York: (200 + 180) / 2 = 190
+- Paris: (320 + 300) / 2 = 310
+- Tokyo: 250
+
+## 24.5. Create the Mapping
+
+```python
+mean_price = df.groupby("city")["price"].mean().to_dict()
+```
+
+```python
+{
+    "London": 150.0,
+    "New York": 190.0,
+    "Paris": 310.0,
+    "Tokyo": 250.0,
+}
+```
+
+## 24.6. Create the Encoded Feature
+
+```python
+df["city_encoded"] = df["city"].map(mean_price)
+```
+
+| City | Price | City Encoded |
+|---|---:|---:|
+| London | 150 | 150 |
+| New York | 200 | 190 |
+| Paris | 320 | 310 |
+| Tokyo | 250 | 250 |
+| New York | 180 | 190 |
+| Paris | 300 | 310 |
+
+Each occurrence of the same category receives the same mean target value.
+
+## 24.7. Why Is It Called Target-Guided?
+
+The numerical value is derived from the target variable:
+
+```text
+City
+  ↓
+Group by City
+  ↓
+Mean of Price
+  ↓
+Numerical Encoding
+```
+
+In this example, the mean target values follow: **Paris > Tokyo > New York > London**. This is an ordering by average observed price, not an inherent ranking of the cities.
+
+## 24.8. Mean or Median
+
+The lecture uses the mean, but the median is another option:
+
+```python
+median_price = df.groupby("city")["price"].median().to_dict()
+df["city_median_encoded"] = df["city"].map(median_price)
+```
+
+## 24.9. Practice Assignment — Seaborn Tips
+
+Load the dataset:
+
+```python
+import seaborn as sns
+
+df = sns.load_dataset("tips")
+```
+
+Choose a categorical feature (for example, `day`) and use `total_bill` as the target:
+
+```python
+mean_bill = df.groupby("day", observed=True)["total_bill"].mean().to_dict()
+df["day_encoded"] = df["day"].map(mean_bill)
+```
+
+## 24.10. Important Practical Caution — Data Leakage
+
+The lecture's example demonstrates the basic calculation on a small dataset. In a real machine-learning pipeline, **never compute category mappings using validation or test targets**. Learn mappings from the training data and apply those mappings to other datasets. For encoding the training rows themselves, out-of-fold target encoding helps prevent each row's target from leaking into its own encoded value. Categories not present during fitting also require a fallback, such as the training target's overall mean.
+
+## Quick Revision
+
+- **Definition:** Encode each category using a target-based statistic.
+- **Common statistics:** Mean or median of the target for that category.
+- **Useful for:** Features with many unique categories.
+- **Core pattern:**
+
+```python
+mean_price = df.groupby("city")["price"].mean().to_dict()
+df["city_encoded"] = df["city"].map(mean_price)
+```
+
+**Core concept:** Category → Target-based statistic → Numerical value.
+
