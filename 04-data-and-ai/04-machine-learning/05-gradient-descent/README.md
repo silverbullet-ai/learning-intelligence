@@ -1,6 +1,6 @@
-## Gradient Descent and Convergence
+# Gradient Descent and Convergence
 
-### 1 Why Do We Need Convergence?
+## 1. Why Do We Need Convergence?
 
 In the previous lecture, we manually changed the slope `θ₁` and calculated the corresponding cost. This helped us visualize the cost curve, but trying arbitrary parameter values is inefficient.
 
@@ -14,13 +14,12 @@ $$
 
 In our simplified example, `θ₀ = 0`, so only the slope `θ₁` is updated.
 
-### 2 The Gradient Descent Update Rule
+## 2. The Gradient Descent Update Rule
 
 The general update rule is:
 
 $$
-\theta_j \leftarrow
-\theta_j-\alpha\frac{\partial J(\theta)}{\partial\theta_j}
+\theta_j \leftarrow \theta_j-\alpha\frac{\partial J(\theta)}{\partial\theta_j}
 $$
 
 Repeat the update until a suitable stopping condition is reached.
@@ -37,7 +36,7 @@ The derivative indicates how the cost changes with the parameter. The learning r
 
 When a model has multiple parameters, each parameter is updated using its own partial derivative.
 
-### 3 How the Derivative Determines the Direction
+## 3. How the Derivative Determines the Direction
 
 Consider a U-shaped cost curve with `θ₁` on the horizontal axis and `J(θ₁)` on the vertical axis.
 
@@ -50,8 +49,7 @@ Consider a U-shaped cost curve with `θ₁` on the horizontal axis and `J(θ₁)
 The update rule is:
 
 $$
-\theta_1 \leftarrow
-\theta_1-\alpha\frac{dJ}{d\theta_1}
+\theta_1 \leftarrow \theta_1-\alpha\frac{dJ}{d\theta_1}
 $$
 
 Therefore:
@@ -62,7 +60,7 @@ Therefore:
 
 For the convex quadratic cost curve in our simplified example, these updates move toward the global minimum when the learning rate is appropriate.
 
-### 4 Understanding the Learning Rate
+## 4. Understanding the Learning Rate
 
 The learning rate `α` controls the size of each parameter update.
 
@@ -76,7 +74,7 @@ The lecture uses `α = 0.001` as an illustrative value. It is not a universally 
 
 The appropriate learning rate depends on the cost function, parameter scale, and problem.
 
-### 5 Step-by-Step Algorithm
+## 5. Step-by-Step Algorithm
 
 1. Initialize the model parameters.
 2. Calculate the current predictions and cost.
@@ -103,7 +101,7 @@ Repeat if Necessary
 Fitted Model
 ```
 
-### 6 What Is Convergence?
+## 6. What Is Convergence?
 
 **Convergence** describes the process of approaching a stable solution or satisfying a stopping condition during optimization.
 
@@ -117,7 +115,7 @@ A small gradient or a stable cost can indicate convergence, but the appropriate 
 
 For the simplified convex quadratic cost curve, the global minimum occurs at `θ₁ = 1`.
 
-## Connection to the Best-Fit Line
+## 7. Connection to the Best-Fit Line
 
 The prediction equation remains:
 
@@ -133,7 +131,7 @@ In the simplified example, the intercept stays fixed at zero. The slope is updat
 
 **Parameter initialization → Gradient calculation → Parameter update → Repeat → Lower cost → Fitted line**
 
-## Important Distinctions
+## 8. Important Distinctions
 
 - **Cost curve:** Shows how cost varies with a parameter.
 - **Gradient descent:** An iterative algorithm that updates parameters using derivatives.
@@ -144,7 +142,7 @@ In the simplified example, the intercept stays fixed at zero. The slope is updat
 
 For the simplified convex cost curve, gradient descent can approach the global minimum when the learning rate is appropriate.
 
-## Interview / Exam Revision
+## 9. Interview / Exam Revision
 
 | Question | Short answer |
 |---|---|
@@ -158,13 +156,12 @@ For the simplified convex cost curve, gradient descent can approach the global m
 | What is convergence? | Reaching a stopping condition or sufficiently stable solution |
 | Does convergence always guarantee a global minimum? | No; that depends on the optimization problem and its properties |
 
-## Quick Revision
+## 10. Quick Revision
 
 **INITIALIZE → CALCULATE GRADIENT → UPDATE PARAMETERS → CHECK CONVERGENCE → REPEAT**
 
 $$
-\theta_j \leftarrow
-\theta_j-\alpha\frac{\partial J(\theta)}{\partial\theta_j}
+\theta_j \leftarrow \theta_j-\alpha\frac{\partial J(\theta)}{\partial\theta_j}
 $$
 
 - `θⱼ`: Parameter being updated
