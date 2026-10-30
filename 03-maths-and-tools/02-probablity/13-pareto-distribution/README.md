@@ -70,9 +70,7 @@ The shape parameter $\alpha$ controls how quickly the tail decreases.
 For the standard Pareto Type I distribution:
 
 $$
-
 x_m > 0,\qquad \alpha > 0,\qquad x \geq x_m
-
 $$
 
 ## 5. Mathematical Representation
@@ -80,9 +78,7 @@ $$
 A random variable following a standard Pareto Type I distribution is written as:
 
 $$
-
-X \sim \operatorname{Pareto}(x_m,\alpha)
-
+X \sim \mathrm{Pareto}(x_m,\alpha)
 $$
 
 where:
@@ -98,14 +94,11 @@ The distribution has support on $x \geq x_m$.
 The PDF is:
 
 $$
-
 f(x)=
 \begin{cases}
-\dfrac{\alpha x_m^\alpha}{x^{\alpha+1}}, & x\geq x_m\$$
-6pt]
+\dfrac{\alpha x_m^\alpha}{x^{\alpha+1}}, & x\geq x_m\\[6pt]
 0, & x<x_m
 \end{cases}
-
 $$
 
 The PDF describes the relative density of probability at each value of $x$. Probabilities over intervals are found by integrating the PDF.
@@ -117,22 +110,17 @@ For interviews, understand what the parameters represent rather than only memori
 The CDF is:
 
 $$
-
 F(x)=
 \begin{cases}
-0, & x<x_m\$$
-4pt]
+0, & x<x_m\\[4pt]
 1-\left(\dfrac{x_m}{x}\right)^\alpha, & x\geq x_m
 \end{cases}
-
 $$
 
 It represents the probability that the random variable is less than or equal to $x$:
 
 $$
-
 F(x)=P(X\leq x)
-
 $$
 
 ## 8. Survival Function
@@ -140,9 +128,7 @@ $$
 The survival function gives the probability that a value exceeds $x$:
 
 $$
-
 P(X>x)=1-F(x)=\left(\frac{x_m}{x}\right)^\alpha,\qquad x\geq x_m
-
 $$
 
 This is useful for understanding the long tail. Extremely large values are uncommon, but the probability of observing them decreases more slowly than it does in a Normal Distribution.
@@ -152,17 +138,13 @@ This is useful for understanding the long tail. Extremely large values are uncom
 The theoretical mean exists only when:
 
 $$
-
 \alpha>1
-
 $$
 
 When $\alpha>1$:
 
 $$
-
 \mu=E[X]=\frac{\alpha x_m}{\alpha-1}
-
 $$
 
 When $0<\alpha\leq1$, the theoretical mean is infinite (and therefore is not finite).
@@ -172,18 +154,14 @@ When $0<\alpha\leq1$, the theoretical mean is infinite (and therefore is not fin
 The theoretical variance exists only when:
 
 $$
-
 \alpha>2
-
 $$
 
 When $\alpha>2$:
 
 $$
-
-\sigma^2=\operatorname{Var}(X)
+\sigma^2=\mathrm{Var}(X)
 =\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}
-
 $$
 
 When $0<\alpha\leq2$, the theoretical variance is infinite (and therefore is not finite).
@@ -268,11 +246,9 @@ Both Pareto and Log-Normal distributions can model positive, right-skewed data, 
 A random variable $X$ is Log-Normal if its natural logarithm is Normally distributed:
 
 $$
-
-X\sim\operatorname{LogNormal}(\mu,\sigma^2)
+X\sim\mathrm{LogNormal}(\mu,\sigma^2)
 \quad\Longleftrightarrow\quad
 \ln(X)\sim N(\mu,\sigma^2)
-
 $$
 
 ### Pareto Distribution
