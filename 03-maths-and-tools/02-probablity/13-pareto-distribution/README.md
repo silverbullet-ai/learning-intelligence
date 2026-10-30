@@ -1,581 +1,465 @@
-```
-```
-
-````
 # Pareto Distribution
 
-## Definition
+## 1. Definition
 
-A **Pareto Distribution** is a **continuous probability distribution** used to model situations where a small number of observations account for a disproportionately large share of the total.
+The **Pareto Distribution** is a **continuous probability distribution** used to model situations in which a relatively small number of observations account for a disproportionately large share of the total.
 
-It is closely related to **Power Law Distributions** and is commonly associated with the **80/20 Rule (Pareto Principle)**.
-
-In simple terms:
+It is closely related to **power-law distributions** and is commonly associated with the **Pareto Principle (80/20 Rule)**.
 
 > A small number of causes can account for a large proportion of the effects.
 
-The famous 80/20 relationship is an example of Pareto behavior, although the exact 80/20 proportion is not a requirement of the mathematical distribution.
+The famous 80/20 relationship is one example of Pareto-like behavior. However, an exact 80/20 split is **not** a mathematical requirement of the Pareto Distribution.
 
----
+## 2. Type and Characteristics
 
-## Type
+- Continuous probability distribution
+- Non-Gaussian distribution
+- Heavy-tailed distribution
+- Right-skewed distribution
+- Described using a probability density function (PDF)
 
-- Continuous Probability Distribution
-- Non-Gaussian Distribution
-- Heavy-tailed Distribution
-- Right-skewed Distribution
-- Uses PDF (Probability Density Function)
-
----
-
-## Shape
+### Shape
 
 A Pareto Distribution typically has:
 
-- A steep decline near the minimum value.
+- A high density near its minimum value.
 - A long right tail.
-- Strong right skewness.
-- A heavy tail compared with a Normal Distribution.
+- Strong positive (right) skewness.
+- More probability in the extreme upper tail than a Normal Distribution.
 
 ```text
-Frequency
-   ^
-   |
-   |************
-   |********
-   |*****
-   |***
-   |**
-   |*
-   |*
-   +------------------------------------>
-                       Long Right Tail
-````
+Density
+  ^
+  |************
+  |********
+  |*****
+  |***
+  |**
+  |*
+  |*
+  +------------------------------------>
+                    Long right tail
+```
 
-The distribution is therefore very different from a symmetric bell-shaped Normal Distribution.
+Unlike a symmetric, bell-shaped Normal Distribution, the Pareto Distribution is strongly right-skewed.
 
----
+## 3. Pareto Principle (80/20 Rule)
 
-# Pareto Principle (80/20 Rule)
-
-The **Pareto Principle**, commonly called the **80/20 Rule**, states that:
-
-> Approximately 80% of effects can come from approximately 20% of causes.
+The **Pareto Principle**, commonly called the **80/20 Rule**, states that approximately 80% of effects may come from approximately 20% of causes.
 
 Examples:
 
--  A small percentage of customers may generate most of the revenue. 
--  A small percentage of software defects may cause most of the problems. 
--  A small percentage of products may generate most of the sales. 
+- A small percentage of customers may generate most of a business's revenue.
+- A small percentage of software defects may cause most software failures.
+- A small percentage of products may account for most sales.
 
-The exact percentages do not have to be 80% and 20%. The important idea is **unequal contribution**.
+The percentages do not have to be exactly 80% and 20%. The central idea is **unequal contribution**.
 
----
+## 4. Parameter: α (Alpha)
 
-# Parameter: α (Alpha)
+A standard Pareto Distribution is characterized by two parameters:
 
-A Pareto Distribution is commonly characterized by a **shape parameter α (alpha)**.
+- **\(x_m\)**: minimum possible value (scale parameter)
+- **\(\alpha\)**: shape parameter
 
-For the standard Pareto distribution:
+The shape parameter \(\alpha\) controls how quickly the tail decreases.
 
-- **α > 0** 
--  α controls the heaviness of the tail. 
+- **Larger \(\alpha\):** the tail decays faster, so extremely large observations are less likely.
+- **Smaller \(\alpha\):** the tail decays more slowly, so extremely large observations are more likely.
 
-A larger α generally means:
+For the standard Pareto Type I distribution:
 
--  Faster decay of the tail. 
--  Fewer extremely large observations. 
--  Less extreme heavy-tail behavior. 
+\[
+x_m > 0,\qquad \alpha > 0,\qquad x \geq x_m
+\]
 
-A smaller α generally means:
+## 5. Mathematical Representation
 
--  Heavier tail. 
--  Greater probability of extremely large observations. 
+A random variable following a standard Pareto Type I distribution is written as:
 
----
-
-# Mathematical Representation
-
-A standard Pareto distribution can be represented as:
-
-**X \~ Pareto(xₘ, α)**
+\[
+X \sim \operatorname{Pareto}(x_m,\alpha)
+\]
 
 where:
 
-- **xₘ** = Minimum possible value (scale parameter) 
-- **α** = Shape parameter 
-- **X** = Random variable 
+- \(X\) = random variable
+- \(x_m\) = minimum possible value (scale parameter)
+- \(\alpha\) = shape parameter
 
-The condition is:
+The distribution has support on \(x \geq x_m\).
 
-**x ≥ xₘ**
+## 6. Probability Density Function (PDF)
 
-and
+The PDF is:
 
-**xₘ > 0**
+\[
+f(x)=
+\begin{cases}
+\dfrac{\alpha x_m^\alpha}{x^{\alpha+1}}, & x\geq x_m\\[6pt]
+0, & x<x_m
+\end{cases}
+\]
 
----
+The PDF describes the relative density of probability at each value of \(x\). Probabilities over intervals are found by integrating the PDF.
 
-# Probability Density Function (PDF)
+For interviews, understand what the parameters represent rather than only memorizing the formula.
 
-The PDF of a standard Pareto distribution is:
-
-**f(x) = α xₘ^α / x^(α + 1)**
-
-for:
-
-**x ≥ xₘ**
-
-Otherwise:
-
-**f(x) = 0**
-
-where:
-
-- **α** = Shape parameter 
-- **xₘ** = Minimum value 
-- **x** = Observed value 
-
-> For interviews, understand the role of the parameters rather than memorizing the formula.
-
----
-
-# Cumulative Distribution Function (CDF)
+## 7. Cumulative Distribution Function (CDF)
 
 The CDF is:
 
-**F(x) = 1 - (xₘ / x)^α**
+\[
+F(x)=
+\begin{cases}
+0, & x<x_m\\[4pt]
+1-\left(\dfrac{x_m}{x}\right)^\alpha, & x\geq x_m
+\end{cases}
+\]
 
-for:
+It represents the probability that the random variable is less than or equal to \(x\):
 
-**x ≥ xₘ**
+\[
+F(x)=P(X\leq x)
+\]
 
-This represents the probability that the random variable is less than or equal to `x`.
+## 8. Survival Function
 
----
+The survival function gives the probability that a value exceeds \(x\):
 
-# Survival Function
+\[
+P(X>x)=1-F(x)=\left(\frac{x_m}{x}\right)^\alpha,\qquad x\geq x_m
+\]
 
-The probability of observing a value greater than `x` is:
+This is useful for understanding the long tail. Extremely large values are uncommon, but the probability of observing them decreases more slowly than it does in a Normal Distribution.
 
-**P(X > x) = (xₘ / x)^α**
+## 9. Mean
 
-This is especially important for understanding the **long tail** of the Pareto Distribution.
+The theoretical mean exists only when:
 
-A heavy tail means that unusually large values, although uncommon, can still occur with meaningful probability.
+\[
+\alpha>1
+\]
 
----
+When \(\alpha>1\):
 
-# Mean
+\[
+\mu=E[X]=\frac{\alpha x_m}{\alpha-1}
+\]
 
-The mean of a Pareto Distribution exists only when:
+When \(0<\alpha\leq1\), the theoretical mean is infinite (and therefore is not finite).
 
-**α > 1**
+## 10. Variance
 
-For:
+The theoretical variance exists only when:
 
-**α > 1**
+\[
+\alpha>2
+\]
 
-the mean is:
+When \(\alpha>2\):
 
-**μ = α xₘ / (α - 1)**
+\[
+\sigma^2=\operatorname{Var}(X)
+=\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}
+\]
 
-If:
+When \(0<\alpha\leq2\), the theoretical variance is infinite (and therefore is not finite).
 
-**α ≤ 1**
-
-the theoretical mean is undefined.
-
----
-
-# Variance
-
-The variance exists only when:
-
-**α > 2**
-
-For:
-
-**α > 2**
-
-the variance is:
-
-**σ² = α xₘ² / [(α - 1)²(α - 2)]**
-
-If:
-
-**α ≤ 2**
-
-the theoretical variance is undefined.
-
----
-
-# Why Is It Heavy-Tailed?
+## 11. Why Is It Heavy-Tailed?
 
 The defining characteristic of the Pareto Distribution is its **heavy right tail**.
 
-Consider two distributions:
-
 ### Normal Distribution
 
-```
-```
-
-```
-Frequency
-   ^
-   |        ***
-   |      *******
-   |    ***********
-   |      *******
-   |        ***
-   +------------------------>
+```text
+Density
+  ^
+  |          ***
+  |        *******
+  |      ***********
+  |        *******
+  |          ***
+  +---------------------------->
 ```
 
-The probability of extremely large values decreases very quickly.
+The probability of extremely large values in a Normal Distribution decreases very quickly.
 
 ### Pareto Distribution
 
-```
-```
-
-```
-Frequency
-   ^
-   |************
-   |*******
-   |****
-   |**
-   |*
-   |*
-   |*
-   +------------------------>
-                  Long Tail
+```text
+Density
+  ^
+  |************
+  |*******
+  |****
+  |**
+  |*
+  |*
+  |*
+  +---------------------------->
+                 Long right tail
 ```
 
-The Pareto Distribution gives relatively more probability to extreme values.
+A Pareto Distribution assigns relatively more probability to extreme large values than a Normal Distribution does.
 
----
+## 12. Relationship with Power Laws
 
-# Relationship with Power Law
+A **power law** is a broad mathematical relationship in which one quantity varies as a power of another.
 
-Pareto Distribution and Power Law Distribution are closely related.
+The **Pareto Distribution** is a specific probability distribution whose tail follows a power law.
 
-```
-```
-
-```
-Power-Law Behavior
-        |
-        v
+```text
+Power-law relationship
+          |
+          v
   Pareto Distribution
-        |
-        v
- Heavy Right Tail
+          |
+          v
+   Heavy right tail
 ```
 
-A **power law** is a broader mathematical relationship in which one quantity varies as a power of another.
+In short:
 
-The **Pareto Distribution** is a specific probability distribution that follows a power-law tail.
+- **Power law:** a broad mathematical concept.
+- **Pareto Distribution:** a specific probability distribution with a power-law tail.
 
-Therefore:
+Not every power-law phenomenon is necessarily a Pareto Type I distribution.
 
--  Power Law → Broad concept 
--  Pareto → Specific probability distribution 
+## 13. Pareto vs. Power Law
 
----
+| Property | Power Law | Pareto Distribution |
+|---|---|---|
+| Meaning | General mathematical relationship | Specific probability distribution |
+| Scope | Broad | Specific |
+| Tail | Often associated with heavy tails | Has a power-law right tail |
+| Distribution | Can describe many kinds of phenomena | Has a defined probability model |
+| 80/20 Rule | Sometimes associated with it | Commonly associated with it |
+| Parameters | Depend on the model | \(x_m\), \(\alpha\) for Pareto Type I |
 
-# Pareto vs Power Law
+## 14. Relationship with the Log-Normal Distribution
 
-| PropertyPower LawPareto Distribution |                                   |                                   |
-| ------------------------------------ | --------------------------------- | --------------------------------- |
-| Meaning                              | General mathematical relationship | Specific probability distribution |
-| Scope                                | Broad                             | Specific                          |
-| Tail                                 | Often heavy-tailed                | Heavy right tail                  |
-| Distribution                         | May describe many phenomena       | Defined mathematically            |
-| 80/20 Rule                           | Often associated                  | Commonly associated               |
-| Parameters                           | Depends on model                  | `xₘ`, `α`                         |
+Both Pareto and Log-Normal distributions can model positive, right-skewed data, but their tails behave differently.
 
----
+### Log-Normal Distribution
 
-# Relationship with Log Normal Distribution
+A random variable \(X\) is Log-Normal if its natural logarithm is Normally distributed:
 
-Both Pareto and Log Normal distributions can model **right-skewed data**, but their tails behave differently.
+\[
+X\sim\operatorname{LogNormal}(\mu,\sigma^2)
+\quad\Longleftrightarrow\quad
+\ln(X)\sim N(\mu,\sigma^2)
+\]
 
-### Log Normal
+### Pareto Distribution
 
-```
-```
+A Pareto Distribution has a power-law tail. Its tail decreases more slowly than the tail of a Log-Normal Distribution, making it especially useful for modeling some forms of extreme-value behavior.
 
-```
-Data
- |
- | Apply ln(x)
- v
-Approximately Normal
-```
+The two distributions can look similar over a limited range of data, so selecting between them requires appropriate model fitting and diagnostics.
 
-If:
+## 15. Box-Cox Transformation
 
-**X \~ Log Normal**
+The **Box-Cox Transformation** is a family of power transformations used with positive-valued data.
 
-then:
+It can help to:
 
-**Y = ln(X)**
+- Reduce skewness.
+- Stabilize variance.
+- Make data more suitable for certain statistical models.
 
-is Normally distributed.
+After transformation, a **Q-Q Plot** can help assess whether the transformed data is approximately Normally distributed.
 
-### Pareto
-
-Pareto data has a **power-law tail** and is substantially heavier-tailed.
-
-A transformation such as **Box-Cox** may sometimes make highly skewed positive data more suitable for statistical modeling, but it is important to understand that transforming Pareto data does **not automatically make it exactly Normal**.
-
----
-
-# Box-Cox Transformation
-
-The **Box-Cox Transformation** is a family of power transformations used for positive-valued data.
-
-It can help:
-
--  Reduce skewness. 
--  Stabilize variance. 
--  Make data more suitable for statistical models. 
-
-After transformation, a **Q-Q Plot** can be used to check whether the transformed data is approximately Normally distributed.
-
-```
+```text
+Positive, right-skewed data
+           |
+           v
+   Box-Cox transformation
+           |
+           v
+      Reduced skewness
+           |
+           v
+         Q-Q plot
+           |
+           v
+ Assess approximate normality
 ```
 
-```
-Pareto / Right-Skewed Data
-            |
-            v
-    Box-Cox Transformation
-            |
-            v
-   Reduced Skewness
-            |
-            v
-      Q-Q Plot
-            |
-            v
-Check for Approximate Normality
-```
+> Box-Cox can improve distributional properties, but it does not guarantee that Pareto-distributed data becomes Normally distributed.
 
-> Box-Cox is a transformation for improving distributional properties; it does not guarantee that Pareto data becomes Normal.
+## 16. How to Investigate a Pareto-Like Distribution
 
----
+A combination of visual and statistical analysis can help assess whether data has a Pareto-like tail.
 
-# How to Check the Distribution
+Useful tools include:
 
-A **Q-Q Plot (Quantile-Quantile Plot)** can be used to compare the quantiles of observed data with the quantiles expected under a chosen theoretical distribution.
+- **Histogram:** shows the overall shape of the data.
+- **Q-Q Plot:** compares sample quantiles with those expected under a selected theoretical distribution.
+- **Log-log plot:** can help reveal power-law behavior in the tail.
+- **Tail analysis:** examines the behavior of unusually large observations.
 
-For Pareto-like data, additional analysis is often useful, such as:
+A roughly straight-line pattern on an appropriate log-log plot can be evidence of power-law behavior, but it is not definitive proof on its own. Model fitting and statistical validation are also important.
 
--  Histogram 
--  Q-Q Plot 
--  Log-log plot 
--  Tail analysis 
+## 17. Real-World Examples
 
-A straight-line pattern on a suitable **log-log plot** can provide evidence of power-law behavior, but it should not be treated as definitive proof by itself.
-
----
-
-# Real-Life Examples
-
-## 1. Wealth Distribution
+### 1. Wealth Distribution
 
 Wealth is often highly concentrated:
 
--  Many people have relatively low or moderate wealth. 
--  A small number of individuals possess extremely large amounts of wealth. 
+- Many people have relatively low or moderate wealth.
+- A small number of individuals possess extremely large amounts of wealth.
 
-This creates a long right tail.
+This can produce a long right tail.
 
----
-
-## 2. Software Defects
+### 2. Software Defects
 
 In software systems:
 
--  A small number of defects may cause a large proportion of failures. 
--  Fixing high-impact defects can therefore produce a large improvement. 
+- A small number of defects may cause a large proportion of failures.
+- Fixing high-impact defects can therefore produce a large improvement.
 
-This is commonly described using the Pareto Principle.
+This pattern is commonly described using the Pareto Principle. It does not mean every defect dataset follows a Pareto Distribution.
 
----
-
-## 3. Business Revenue
+### 3. Business Revenue
 
 A small percentage of customers may contribute a large percentage of total revenue.
 
-For example:
-
-```
-```
-
-```
-20% of customers
-       |
-       v
-Large proportion of revenue
+```text
+Small share of customers
+           |
+           v
+Large share of revenue
 ```
 
-The exact percentages vary by business.
+The exact proportions vary from business to business.
 
----
-
-## 4. Sales and Products
+### 4. Sales and Products
 
 A small number of products may generate a large proportion of total sales.
 
-This can help businesses identify:
+This analysis can help businesses identify:
 
--  High-performing products 
--  Important customers 
--  Revenue concentration 
+- High-performing products
+- Important customers
+- Revenue concentration
 
----
+### 5. City and Population Size
 
-## 5. City / Population Size
+Population distributions can exhibit substantial inequality:
 
-Population distributions can exhibit strong inequality, where:
-
--  Many cities have relatively small populations. 
--  A small number of cities have extremely large populations. 
+- Many cities have relatively small populations.
+- A small number of cities have extremely large populations.
 
 Such patterns are often studied using heavy-tailed or power-law models.
 
----
-
-# Applications
+## 18. Applications
 
 Pareto and Pareto-like models are useful in areas such as:
 
--  Economics 
--  Wealth analysis 
--  Business analytics 
--  Revenue analysis 
--  Risk analysis 
--  Reliability engineering 
--  Software defect analysis 
--  Network analysis 
--  Population studies 
--  Data Science 
+- Economics and wealth analysis
+- Business analytics
+- Revenue and customer analysis
+- Risk analysis
+- Reliability engineering
+- Software defect analysis
+- Network analysis
+- Population studies
+- Data Science
 
----
+## 19. Pareto Distribution in Data Science
 
-# Pareto Distribution in Data Science
+Many real-world datasets are not Normally distributed. Pareto-like behavior may appear in data such as:
 
-Pareto-like distributions are important because many real-world datasets are **not Normally distributed**.
+- Income and wealth
+- Transaction sizes
+- Website traffic
+- Insurance claims
+- File sizes
+- Network activity
 
-Examples include:
+Understanding heavy-tailed distributions can help analysts investigate:
 
--  Income 
--  Wealth 
--  Transaction sizes 
--  Website traffic 
--  Insurance claims 
--  File sizes 
--  Network activity 
+- Extreme values
+- Outliers
+- Risk concentration
+- Unequal distributions
 
-Understanding heavy-tailed distributions helps identify:
+It is important to distinguish a dataset that is merely right-skewed from one that genuinely follows a Pareto model.
 
--  Extreme values 
--  Outliers 
--  Risk concentration 
--  Unequal distributions 
+## 20. Pareto vs. Normal vs. Log-Normal
 
----
+| Property | Normal | Log-Normal | Pareto |
+|---|---|---|---|
+| Type | Continuous | Continuous | Continuous |
+| Shape | Bell-shaped | Right-skewed | Right-skewed |
+| Symmetric | Yes | No | No |
+| Support | All real numbers | Positive values | \(x\geq x_m\) |
+| Tail behavior | Light (exponential-type) | Heavier than Normal, but not power-law | Power-law; very heavy |
+| Negative values possible? | Yes | No | No |
+| Mean | Always finite | Always finite | Finite only if \(\alpha>1\) |
+| Variance | Always finite | Always finite | Finite only if \(\alpha>2\) |
+| Main characteristic | Symmetry | Logarithm is Normally distributed | Power-law tail |
 
-# Pareto vs Normal vs Log Normal
+## 21. Key Points
 
-| PropertyNormalLog NormalPareto |                |                        |                       |
-| ------------------------------ | -------------- | ---------------------- | --------------------- |
-| Type                           | Continuous     | Continuous             | Continuous            |
-| Shape                          | Bell-shaped    | Right-skewed           | Strongly right-skewed |
-| Symmetric                      | Yes            | No                     | No                    |
-| Tail                           | Light          | Heavy-ish              | Very heavy            |
-| Negative values                | Possible       | No                     | No                    |
-| Mean                           | Always defined | Defined                | Only if α > 1         |
-| Variance                       | Always defined | Defined                | Only if α > 2         |
-| Main characteristic            | Symmetry       | Log-transformed Normal | Power-law tail        |
+- The Pareto Distribution is a **continuous probability distribution**.
+- It is **right-skewed** and has a **long, heavy right tail**.
+- It is closely related to **power-law behavior**.
+- It is commonly associated with the **Pareto Principle (80/20 Rule)**, but an exact 80/20 split is not required.
+- Its standard Type I parameters are:
+  - \(x_m\): minimum possible value (scale parameter)
+  - \(\alpha\): shape parameter
+- A smaller \(\alpha\) produces a heavier tail.
+- A larger \(\alpha\) produces a faster-decaying tail.
+- The mean is finite only when \(\alpha>1\).
+- The variance is finite only when \(\alpha>2\).
+- Histograms, Q-Q plots, log-log plots, and tail analysis can help investigate Pareto-like behavior.
+- Box-Cox can reduce skewness in positive data, but it does not guarantee normality.
 
----
+## 22. Interview Questions
 
-# Key Points
+1. What is a Pareto Distribution?
+2. Is the Pareto Distribution continuous or discrete?
+3. Why is the Pareto Distribution called heavy-tailed?
+4. What is the Pareto Principle?
+5. What is the 80/20 Rule?
+6. What does \(\alpha\) (alpha) represent?
+7. What happens to the tail when \(\alpha\) decreases?
+8. What happens to the tail when \(\alpha\) increases?
+9. What is the difference between a power law and the Pareto Distribution?
+10. What are the parameters of a standard Pareto Distribution?
+11. Under what condition does its mean exist as a finite value?
+12. Under what condition does its variance exist as a finite value?
+13. What are some real-world examples of Pareto-like data?
+14. How is the Pareto Distribution different from the Normal Distribution?
+15. How is it different from the Log-Normal Distribution?
+16. How can you investigate whether data has a Pareto-like tail?
+17. What is the role of a Q-Q Plot?
+18. What is the Box-Cox Transformation?
+19. Does Box-Cox always convert Pareto data into a Normal Distribution?
+20. Why are heavy-tailed distributions important in Data Science?
 
--  Pareto Distribution is a **continuous probability distribution**. 
--  It is **right-skewed**. 
--  It has a **long, heavy right tail**. 
--  It is closely related to **Power Law Distributions**. 
--  It is associated with the **Pareto Principle / 80/20 Rule**. 
--  The main parameters are: 
-  - `xₘ` → minimum value 
-  - `α` → shape parameter 
--  Smaller α generally produces a heavier tail. 
--  The mean exists only when **α > 1**. 
--  The variance exists only when **α > 2**. 
--  Pareto distributions are useful for modeling highly unequal or heavy-tailed data. 
--  Q-Q plots, histograms, and log-log analysis can help investigate Pareto-like behavior. 
--  Box-Cox can reduce skewness in positive data, but does not guarantee Normality. 
+## 23. Quick Revision
 
----
-
-# Interview Questions
-
-1.  What is a Pareto Distribution? 
-2.  Is Pareto Distribution continuous or discrete? 
-3.  Why is Pareto Distribution called a heavy-tailed distribution? 
-4.  What is the Pareto Principle? 
-5.  What is the 80/20 Rule? 
-6.  What does α (alpha) represent? 
-7.  What happens when α decreases? 
-8.  What happens when α increases? 
-9.  What is the difference between Power Law and Pareto Distribution? 
-10.  What are the parameters of a Pareto Distribution? 
-11.  When does the mean of a Pareto Distribution exist? 
-12.  When does the variance exist? 
-13.  Give real-world examples of Pareto-like data. 
-14.  How is Pareto different from Normal Distribution? 
-15.  How is Pareto different from Log Normal Distribution? 
-16.  How can you investigate whether data has a Pareto-like tail? 
-17.  What is the role of a Q-Q Plot? 
-18.  What is the Box-Cox Transformation? 
-19.  Does Box-Cox always convert Pareto data into a Normal Distribution? 
-20.  Why are heavy-tailed distributions important in Data Science? 
-
----
-
-# Quick Revision
-
-| PropertyDescription |                                            |
-| ------------------- | ------------------------------------------ |
-| Type                | Continuous Probability Distribution        |
-| Shape               | Right-skewed                               |
-| Tail                | Long and heavy right tail                  |
-| Main parameters     | `xₘ`, `α`                                  |
-| `xₘ`                | Minimum possible value                     |
-| `α`                 | Shape parameter                            |
-| Distribution family | Power-law related                          |
-| Principle           | Pareto Principle / 80/20 Rule              |
-| Mean                | `αxₘ / (α - 1)` when `α > 1`               |
-| Variance            | `αxₘ² / [(α - 1)²(α - 2)]` when `α > 2`    |
-| Applications        | Wealth, revenue, risk, defects, population |
-| Analysis            | Histogram, Q-Q Plot, log-log analysis      |
-
----
+| Property | Description |
+|---|---|
+| Type | Continuous probability distribution |
+| Shape | Right-skewed |
+| Tail | Long, heavy right tail |
+| Parameters | \(x_m\), \(\alpha\) |
+| \(x_m\) | Minimum possible value (scale parameter) |
+| \(\alpha\) | Shape parameter |
+| Distribution family | Power-law related |
+| Associated principle | Pareto Principle / 80/20 Rule |
+| Mean | \(\frac{\alpha x_m}{\alpha-1}\), if \(\alpha>1\) |
+| Variance | \(\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}\), if \(\alpha>2\) |
+| Applications | Wealth, revenue, risk, defects, population |
+| Analysis | Histogram, Q-Q Plot, log-log analysis, tail analysis |
 
 ## 💡 Remember
 
-**Normal** → Symmetric bell curve
-
-**Log Normal** → Right-skewed distribution obtained by exponentiating Normal data
-
-**Power Law** → General mathematical relationship involving powers
-
-**Pareto** → Specific heavy-tailed probability distribution related to Power Laws
-
-**80/20 Rule** → Small proportion of causes → Large proportion of effects
+- **Normal** → Symmetric bell curve.
+- **Log-Normal** → Right-skewed distribution whose logarithm is Normally distributed.
+- **Power Law** → General mathematical relationship involving powers.
+- **Pareto** → Specific heavy-tailed probability distribution related to power laws.
+- **80/20 Rule** → A small proportion of causes may account for a large proportion of effects.
