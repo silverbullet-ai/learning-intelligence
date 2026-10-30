@@ -59,49 +59,56 @@ The percentages do not have to be exactly 80% and 20%. The central idea is **une
 
 A standard Pareto Distribution is characterized by two parameters:
 
-- **\(x_m\)**: minimum possible value (scale parameter)
-- **\(\alpha\)**: shape parameter
+- **$x_m$**: minimum possible value (scale parameter)
+- **$\alpha$**: shape parameter
 
-The shape parameter \(\alpha\) controls how quickly the tail decreases.
+The shape parameter $\alpha$ controls how quickly the tail decreases.
 
-- **Larger \(\alpha\):** the tail decays faster, so extremely large observations are less likely.
-- **Smaller \(\alpha\):** the tail decays more slowly, so extremely large observations are more likely.
+- **Larger $\alpha$:** the tail decays faster, so extremely large observations are less likely.
+- **Smaller $\alpha$:** the tail decays more slowly, so extremely large observations are more likely.
 
 For the standard Pareto Type I distribution:
 
-\[
+$$
+
 x_m > 0,\qquad \alpha > 0,\qquad x \geq x_m
-\]
+
+$$
 
 ## 5. Mathematical Representation
 
 A random variable following a standard Pareto Type I distribution is written as:
 
-\[
+$$
+
 X \sim \operatorname{Pareto}(x_m,\alpha)
-\]
+
+$$
 
 where:
 
-- \(X\) = random variable
-- \(x_m\) = minimum possible value (scale parameter)
-- \(\alpha\) = shape parameter
+- $X$ = random variable
+- $x_m$ = minimum possible value (scale parameter)
+- $\alpha$ = shape parameter
 
-The distribution has support on \(x \geq x_m\).
+The distribution has support on $x \geq x_m$.
 
 ## 6. Probability Density Function (PDF)
 
 The PDF is:
 
-\[
+$$
+
 f(x)=
 \begin{cases}
-\dfrac{\alpha x_m^\alpha}{x^{\alpha+1}}, & x\geq x_m\\[6pt]
+\dfrac{\alpha x_m^\alpha}{x^{\alpha+1}}, & x\geq x_m\$$
+6pt]
 0, & x<x_m
 \end{cases}
-\]
 
-The PDF describes the relative density of probability at each value of \(x\). Probabilities over intervals are found by integrating the PDF.
+$$
+
+The PDF describes the relative density of probability at each value of $x$. Probabilities over intervals are found by integrating the PDF.
 
 For interviews, understand what the parameters represent rather than only memorizing the formula.
 
@@ -109,27 +116,34 @@ For interviews, understand what the parameters represent rather than only memori
 
 The CDF is:
 
-\[
+$$
+
 F(x)=
 \begin{cases}
-0, & x<x_m\\[4pt]
+0, & x<x_m\$$
+4pt]
 1-\left(\dfrac{x_m}{x}\right)^\alpha, & x\geq x_m
 \end{cases}
-\]
 
-It represents the probability that the random variable is less than or equal to \(x\):
+$$
 
-\[
+It represents the probability that the random variable is less than or equal to $x$:
+
+$$
+
 F(x)=P(X\leq x)
-\]
+
+$$
 
 ## 8. Survival Function
 
-The survival function gives the probability that a value exceeds \(x\):
+The survival function gives the probability that a value exceeds $x$:
 
-\[
+$$
+
 P(X>x)=1-F(x)=\left(\frac{x_m}{x}\right)^\alpha,\qquad x\geq x_m
-\]
+
+$$
 
 This is useful for understanding the long tail. Extremely large values are uncommon, but the probability of observing them decreases more slowly than it does in a Normal Distribution.
 
@@ -137,34 +151,42 @@ This is useful for understanding the long tail. Extremely large values are uncom
 
 The theoretical mean exists only when:
 
-\[
+$$
+
 \alpha>1
-\]
 
-When \(\alpha>1\):
+$$
 
-\[
+When $\alpha>1$:
+
+$$
+
 \mu=E[X]=\frac{\alpha x_m}{\alpha-1}
-\]
 
-When \(0<\alpha\leq1\), the theoretical mean is infinite (and therefore is not finite).
+$$
+
+When $0<\alpha\leq1$, the theoretical mean is infinite (and therefore is not finite).
 
 ## 10. Variance
 
 The theoretical variance exists only when:
 
-\[
+$$
+
 \alpha>2
-\]
 
-When \(\alpha>2\):
+$$
 
-\[
+When $\alpha>2$:
+
+$$
+
 \sigma^2=\operatorname{Var}(X)
 =\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}
-\]
 
-When \(0<\alpha\leq2\), the theoretical variance is infinite (and therefore is not finite).
+$$
+
+When $0<\alpha\leq2$, the theoretical variance is infinite (and therefore is not finite).
 
 ## 11. Why Is It Heavy-Tailed?
 
@@ -235,7 +257,7 @@ Not every power-law phenomenon is necessarily a Pareto Type I distribution.
 | Tail | Often associated with heavy tails | Has a power-law right tail |
 | Distribution | Can describe many kinds of phenomena | Has a defined probability model |
 | 80/20 Rule | Sometimes associated with it | Commonly associated with it |
-| Parameters | Depend on the model | \(x_m\), \(\alpha\) for Pareto Type I |
+| Parameters | Depend on the model | $x_m$, $\alpha$ for Pareto Type I |
 
 ## 14. Relationship with the Log-Normal Distribution
 
@@ -243,13 +265,15 @@ Both Pareto and Log-Normal distributions can model positive, right-skewed data, 
 
 ### Log-Normal Distribution
 
-A random variable \(X\) is Log-Normal if its natural logarithm is Normally distributed:
+A random variable $X$ is Log-Normal if its natural logarithm is Normally distributed:
 
-\[
+$$
+
 X\sim\operatorname{LogNormal}(\mu,\sigma^2)
 \quad\Longleftrightarrow\quad
 \ln(X)\sim N(\mu,\sigma^2)
-\]
+
+$$
 
 ### Pareto Distribution
 
@@ -393,11 +417,11 @@ It is important to distinguish a dataset that is merely right-skewed from one th
 | Type | Continuous | Continuous | Continuous |
 | Shape | Bell-shaped | Right-skewed | Right-skewed |
 | Symmetric | Yes | No | No |
-| Support | All real numbers | Positive values | \(x\geq x_m\) |
+| Support | All real numbers | Positive values | $x\geq x_m$ |
 | Tail behavior | Light (exponential-type) | Heavier than Normal, but not power-law | Power-law; very heavy |
 | Negative values possible? | Yes | No | No |
-| Mean | Always finite | Always finite | Finite only if \(\alpha>1\) |
-| Variance | Always finite | Always finite | Finite only if \(\alpha>2\) |
+| Mean | Always finite | Always finite | Finite only if $\alpha>1$ |
+| Variance | Always finite | Always finite | Finite only if $\alpha>2$ |
 | Main characteristic | Symmetry | Logarithm is Normally distributed | Power-law tail |
 
 ## 21. Key Points
@@ -407,12 +431,12 @@ It is important to distinguish a dataset that is merely right-skewed from one th
 - It is closely related to **power-law behavior**.
 - It is commonly associated with the **Pareto Principle (80/20 Rule)**, but an exact 80/20 split is not required.
 - Its standard Type I parameters are:
-  - \(x_m\): minimum possible value (scale parameter)
-  - \(\alpha\): shape parameter
-- A smaller \(\alpha\) produces a heavier tail.
-- A larger \(\alpha\) produces a faster-decaying tail.
-- The mean is finite only when \(\alpha>1\).
-- The variance is finite only when \(\alpha>2\).
+  - $x_m$: minimum possible value (scale parameter)
+  - $\alpha$: shape parameter
+- A smaller $\alpha$ produces a heavier tail.
+- A larger $\alpha$ produces a faster-decaying tail.
+- The mean is finite only when $\alpha>1$.
+- The variance is finite only when $\alpha>2$.
 - Histograms, Q-Q plots, log-log plots, and tail analysis can help investigate Pareto-like behavior.
 - Box-Cox can reduce skewness in positive data, but it does not guarantee normality.
 
@@ -423,9 +447,9 @@ It is important to distinguish a dataset that is merely right-skewed from one th
 3. Why is the Pareto Distribution called heavy-tailed?
 4. What is the Pareto Principle?
 5. What is the 80/20 Rule?
-6. What does \(\alpha\) (alpha) represent?
-7. What happens to the tail when \(\alpha\) decreases?
-8. What happens to the tail when \(\alpha\) increases?
+6. What does $\alpha$ (alpha) represent?
+7. What happens to the tail when $\alpha$ decreases?
+8. What happens to the tail when $\alpha$ increases?
 9. What is the difference between a power law and the Pareto Distribution?
 10. What are the parameters of a standard Pareto Distribution?
 11. Under what condition does its mean exist as a finite value?
@@ -446,13 +470,13 @@ It is important to distinguish a dataset that is merely right-skewed from one th
 | Type | Continuous probability distribution |
 | Shape | Right-skewed |
 | Tail | Long, heavy right tail |
-| Parameters | \(x_m\), \(\alpha\) |
-| \(x_m\) | Minimum possible value (scale parameter) |
-| \(\alpha\) | Shape parameter |
+| Parameters | $x_m$, $\alpha$ |
+| $x_m$ | Minimum possible value (scale parameter) |
+| $\alpha$ | Shape parameter |
 | Distribution family | Power-law related |
 | Associated principle | Pareto Principle / 80/20 Rule |
-| Mean | \(\frac{\alpha x_m}{\alpha-1}\), if \(\alpha>1\) |
-| Variance | \(\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}\), if \(\alpha>2\) |
+| Mean | $\frac{\alpha x_m}{\alpha-1}$, if $\alpha>1$ |
+| Variance | $\frac{\alpha x_m^2}{(\alpha-1)^2(\alpha-2)}$, if $\alpha>2$ |
 | Applications | Wealth, revenue, risk, defects, population |
 | Analysis | Histogram, Q-Q Plot, log-log analysis, tail analysis |
 
