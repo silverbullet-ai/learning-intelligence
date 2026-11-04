@@ -1,7 +1,5 @@
 # R² and Adjusted R²
 
-**AI-2 • Linear Regression • Lecture 7**
-
 Performance metrics for simple and multiple linear regression.
 
 ## Learning Objectives
