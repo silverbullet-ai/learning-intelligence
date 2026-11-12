@@ -66,7 +66,7 @@ learning-intelligence/
 | Foundations | <img src="https://img.shields.io/badge/Completed-2EA44F?style=flat-square" alt="Completed"> |
 | Python Core | <img src="https://img.shields.io/badge/Completed-2EA44F?style=flat-square" alt="Completed"> |
 | Mathematics and Tools | <img src="https://img.shields.io/badge/In%20Progress-FFA500?style=flat-square" alt="In Progress"> |
-| Data and AI | <img src="https://img.shields.io/badge/Upcoming-808080?style=flat-square" alt="Upcoming"> |
+| Data and AI | <img src="https://img.shields.io/badge/In%20Progress-FFA500?style=flat-square" alt="In Progress"> |
 | Deployment | <img src="https://img.shields.io/badge/Upcoming-808080?style=flat-square" alt="Upcoming"> |
 
 ## Learning Philosophy
